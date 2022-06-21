@@ -1,0 +1,540 @@
+<html><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="resource.root/bes/ad/css/components.css">
+	<link href="resource.root/themes/pc/app/app.css" type="text/css" rel="stylesheet">
+	<link href="resource.root/bes/ad/css/base.css" type="text/css" rel="stylesheet">
+	<!-- <link href="resource.root/bes/ad/ctz/themes/default/css/base.css" type="text/css" rel="stylesheet"> -->
+	<!-- <link rel="stylesheet" href="resource.root/bes/ad/css/components.css"/> -->
+	
+   	<link rel="stylesheet" href="resource.root/bes/ad/css/Radio.css">
+	<link rel="stylesheet" href="resource.root/bes/ad/css/Checkbox.css">
+	<link rel="stylesheet" href="resource.root/bes/ad/css/Droplist.css">	
+	<link rel="stylesheet" href="resource.root/bes/ad/css/bme.datetimepicker.css">
+	<link rel="stylesheet" href="resource.root/bes/ad/css/bme.shadow.css">
+	<link rel="stylesheet" href="resource.root/bes/ad/css/xsort.css">
+    <link href="resource.root/bes/ad/ctz/themes/default/css/base.css" type="text/css" rel="stylesheet" class="ng-scope">
+	<script type="text/javascript" src="resource.root/bes/ad/js/ui.datetimepicker.bmefix.js"></script>
+	<script type="text/javascript" src="resource.root/bes/ad/js/jquery.ui.i18n.all.bmefix.js"></script>
+	<script type="text/javascript" src="resource.root/bes/ad/js/jbme.poper.js"></script>
+	<script src="resource.app/app.js" type="text/javascript"></script>
+	<script type="text/javascript" src="resource.root/bes/ad/js/Droplist.js"></script>
+	<script type="text/javascript" src="resource.root/bes/ad/js/Checkbox.js"></script>
+	<script type="text/javascript" src="resource.root/bes/ad/js/Radio.js"></script>
+	<script type="text/javascript" src="resource.root/bes/ad/js/xsort.js"></script>
+	<script type="text/javascript" src="resource.root/bes/ad/js/Date.js"></script>
+	<script src="resource.root/bes/ad/js/Pages.js" type="text/javascript"></script>
+	<script src="resource.root/bes/ad/js/ad-util.js"></script>
+	<script type="text/javascript" src="resource.root/bes/ad/js/common-group.js"></script>
+	<script src="resource.root/bes/ad/js/oc-droplist.js"></script>
+	<script src="resource.root/bes/ad/js/oc-directive.js"></script>
+	<script type="text/javascript" src="resource.root/bes/ad/js/Tab.js"></script>
+	<script type="text/javascript" src="resource.root/bes/ad/js/validator.js"></script>
+	<script type="text/javascript" src="resource.root/bes/ad/js/callchain.js"></script>
+	<script type="text/javascript" src="resource.root/bes/ad/js/DefaultScroll.js"></script>
+	<script type="text/javascript" src="resource.root/bes/ad/js/common.js"></script>
+	<script src="resource.root/bes/ad/js/cspCommon.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/gadget/bes-ad-authentication/authentication.js" type="text/javascript"></script>
+	
+<script type="text/javascript" src="resource.root/bes/ad/js/BuriedPointStatistics.js"></script><script type="text/javascript"></script></head>
+
+<body novalidate="novalidate">
+	<business name="overseascustview" start-step="index">
+		<step name="index" view="bes-ad-overseascustview.uslx"></step>
+		<step name="personalmainofferchange" view="resource.root/bes/ad/usl/personalmainofferchange.uslx"></step>
+		<step name="checkout" view="resource.root/bes/ad/usl/bes-ad-checkout-new.uslx"></step>
+		<step name="after" view="resource.root/bes/ad/usl/bes-ad-servicefinish.uslx"></step>
+	</business>
+	<div class="uee-page" rendertime="render me cost 36ms"><div class="uee-gadget ng-scope bes-ad-overseascustview" id="overseaacustview" gadget="" name="bes:ad-overseascustview"><!-- ueeScript: src=resource.root/bes/ad/ctz/gadget/bes-ad-authentication/authentication.js--><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-ad-sr-overseascustview/bes-ad-overseascustview.js-->
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/default/resource/css/base.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/default/resource/css/framework.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/default/resource/css/Checkbox.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/default/resource/css/Droplist.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/default/resource/css/Radio.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/default/resource/css/Date.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/default/resource/css/pages.css" class="ng-scope">
+	
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/default/resource/css/personal.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/default/resource/css/colombia/newbase.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/default/resource/css/other/userInfoSearch.css" class="ng-scope">
+    
+    
+    
+    <uee:include src="$Gadget.$Path + '/bes-ad-overseascustview.html'" class="ng-scope"><link href="resource.root/bes/ad/css/jstree/style.min.css" type="text/css" rel="stylesheet" class="ng-scope">
+<uee:fire init="" script="OC.Callchain.initQueryTraceFlag($Page, $Gadget, $Inject('$Fire'))" class="ng-scope"></uee:fire>
+<uee:fire init="$Page.queryTraceFlag" service="smservicetracebo/querytraceinfo" param-functype="$Page.functype" param-phonenum="$Page.phonenum" target="$Page.smTrace" onbefore="$Page.functype = '6013120160325250'; $Page.phonenum = OC.Callchain.getServNum();$Page.pageId = '360dtl';" onerror="OC.Callchain.initError();" onafter="OC.Callchain.initFireSearch();" class="ng-scope"></uee:fire>
+<uee:fire init="$Page.callchainInit" onbefore="OC.Callchain.setFireSearch($Page.pageId, OC.Callchain.getInitFireId())" script="$Controller.bes.ad.overseascustview.init($Page, $Gadget,$UI);" class="ng-scope"></uee:fire>
+
+<!-- ueeIf: undefined -->
+<!-- ueeIf: undefined -->
+<!-- ngIf: $Page.$Pojo.custinfo.custid && $Page.$Pojo.thirdflag!='SME' --><div class="uee-gadget ng-scope bes-ad-menu-tab-tree" ng-if="$Page.$Pojo.custinfo.custid &amp;&amp; $Page.$Pojo.thirdflag!='SME'" busicode="UNIFIED_VIEW" seniorid="" gadget="" name="bes:ad-menu-tab-tree"><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-ad-menu-tab-tree/bes-ad-menu-tab-tree.js-->
+
+	<!-- ueeGadgetAttr: name=busicode--> <!-- 业务编码 -->
+	<!-- ueeGadgetAttr: name=seniorid--> <!-- 场景编号 -->
+	
+	<!-- ueeGadgetAttr: name=undefined--> <!-- 组件绑定的入参模型 -->
+	<!-- <uee:gadget-attr property="model"></uee:gadget-attr> 组件绑定的出参模型
+	<uee:gadget-attr property="validate"></uee:gadget-attr> 组件绑定的校验 -->
+
+	
+	<uee:include src="$Gadget.$Path + '/bes-ad-menu-tab-tree.html'" class="ng-scope"><uee:fire init="" script="$Controller.bes.ad.menu.tab.tree.init($Page,$Gadget,$Inject('$Fire'),$UI);" class="ng-scope"></uee:fire>	
+<!-- ngIf: $Gadget.DataIsReady --><div class="panel psn_main ng-scope" ng-if="$Gadget.DataIsReady">
+	<div>
+		<div class="uee-gadget ng-scope bes-ad-menu-tabs" tab="$Gadget.tab.layer1param" event="$bes.ad.tap.layer1refresh" event2="$bes.ad.tap.layer1.showtab" params="$Gadget.$Attrs.params" gadget="" name="bes:ad-menu-tabs"><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-ad-menu-tabs/bes-ad-menu-tabs.js-->
+    <link type="text/css" rel="stylesheet" ng-href="resource.root/bes/ad/gadget/bes-ad-menu-tabs/bes-ad-menu-tabs.css" class="ng-scope" href="resource.root/bes/ad/gadget/bes-ad-menu-tabs/bes-ad-menu-tabs.css">
+
+	<!-- <uee:gadget-attr name="busicode" defaultvalue="UNIFIED_VIEW"></uee:gadget-attr> 业务编码
+	<uee:gadget-attr name="seniorid"></uee:gadget-attr> 场景编码
+	<uee:gadget-attr name="ptabid"></uee:gadget-attr> 父级tab页签ID，为空时，取第一层tab页签 -->
+	
+	<!-- ueeGadgetAttr: name=undefined--> <!-- 组件绑定的入参模型 -->
+	<!-- ueeGadgetAttr: name=event--><!-- 绑定事件名字 -->
+	<!-- ueeGadgetAttr: name=event2--><!-- 绑定事件名字 -->
+    
+	<!-- ueeGadgetAttr: name=undefined--> <!-- 组件绑定的入参模型 -->
+	<!-- <uee:gadget-attr property="model"></uee:gadget-attr> 组件绑定的出参模型
+	<uee:gadget-attr property="validate"></uee:gadget-attr> 组件绑定的校验 -->
+
+	
+	<uee:include src="$Gadget.$Path + '/bes-ad-menu-tabs.html'" class="ng-scope"><uee:fire init="" script="$Controller.bes.ad.menu.tabs.init($Page, $Gadget);" class="ng-scope"></uee:fire>
+<uee:fire event="$bes.ad.tap.layer1refresh" script="$Controller.bes.ad.menu.tabs.refresh($Page, $Gadget, $Event);" class="ng-scope"> 
+ <uee:fire event="$bes.ad.tap.layer1.showtab" script="$Controller.bes.ad.menu.tabs.show($Page, $Gadget, $Event);" class="ng-scope">    
+<div class="pl_content">
+    <!-- ngIf: $Gadget.tab.tabList --><div class="tab ng-scope" ng-if="$Gadget.tab.tabList">
+        <div class="tab_nav">
+            <ul class="clearfix">
+                <!-- ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) --><!-- ngIf: $Gadget.tab.tabList.length<=7 --><span ng-repeat="$Item in $Gadget.tab.tabList track by $id($index)" ng-if="$Gadget.tab.tabList.length<=7" class="ng-scope">
+                    <li id="601314801" ng-class="{last:$index==$Gadget.tab.tabList.length-1,active:$Gadget.tab.showTab.tabId==$Item.tabId}" class="active">
+                    <!-- ngIf: !$Gadget.tab.ptabid --><span ng-bind="$Item.tabName" ng-if="!$Gadget.tab.ptabid" class="ng-binding ng-scope">Cliente</span><!-- end ngIf: !$Gadget.tab.ptabid --> 
+                    <!-- ngIf: $Gadget.tab.ptabid --> 
+                    <uee:fire event="click" script="$Controller.bes.ad.menu.tabs.changeTab($Page, $Gadget, $Inject('$Fire'), $UI, $Item);" class="ng-scope"></uee:fire>
+                    </li>
+                </span><!-- end ngIf: $Gadget.tab.tabList.length<=7 --><!-- end ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) --><!-- ngIf: $Gadget.tab.tabList.length<=7 --><span ng-repeat="$Item in $Gadget.tab.tabList track by $id($index)" ng-if="$Gadget.tab.tabList.length<=7" class="ng-scope">
+                    <li id="601314802" ng-class="{last:$index==$Gadget.tab.tabList.length-1,active:$Gadget.tab.showTab.tabId==$Item.tabId}">
+                    <!-- ngIf: !$Gadget.tab.ptabid --><span ng-bind="$Item.tabName" ng-if="!$Gadget.tab.ptabid" class="ng-binding ng-scope">Cuenta</span><!-- end ngIf: !$Gadget.tab.ptabid --> 
+                    <!-- ngIf: $Gadget.tab.ptabid --> 
+                    <uee:fire event="click" script="$Controller.bes.ad.menu.tabs.changeTab($Page, $Gadget, $Inject('$Fire'), $UI, $Item);" class="ng-scope"></uee:fire>
+                    </li>
+                </span><!-- end ngIf: $Gadget.tab.tabList.length<=7 --><!-- end ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) --><!-- ngIf: $Gadget.tab.tabList.length<=7 --><span ng-repeat="$Item in $Gadget.tab.tabList track by $id($index)" ng-if="$Gadget.tab.tabList.length<=7" class="ng-scope">
+                    <li id="601314803" ng-class="{last:$index==$Gadget.tab.tabList.length-1,active:$Gadget.tab.showTab.tabId==$Item.tabId}">
+                    <!-- ngIf: !$Gadget.tab.ptabid --><span ng-bind="$Item.tabName" ng-if="!$Gadget.tab.ptabid" class="ng-binding ng-scope">Suscripciones</span><!-- end ngIf: !$Gadget.tab.ptabid --> 
+                    <!-- ngIf: $Gadget.tab.ptabid --> 
+                    <uee:fire event="click" script="$Controller.bes.ad.menu.tabs.changeTab($Page, $Gadget, $Inject('$Fire'), $UI, $Item);" class="ng-scope"></uee:fire>
+                    </li>
+                </span><!-- end ngIf: $Gadget.tab.tabList.length<=7 --><!-- end ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) --><!-- ngIf: $Gadget.tab.tabList.length<=7 --><span ng-repeat="$Item in $Gadget.tab.tabList track by $id($index)" ng-if="$Gadget.tab.tabList.length<=7" class="ng-scope">
+                    <li id="601314804" ng-class="{last:$index==$Gadget.tab.tabList.length-1,active:$Gadget.tab.showTab.tabId==$Item.tabId}">
+                    <!-- ngIf: !$Gadget.tab.ptabid --><span ng-bind="$Item.tabName" ng-if="!$Gadget.tab.ptabid" class="ng-binding ng-scope">Ordenes</span><!-- end ngIf: !$Gadget.tab.ptabid --> 
+                    <!-- ngIf: $Gadget.tab.ptabid --> 
+                    <uee:fire event="click" script="$Controller.bes.ad.menu.tabs.changeTab($Page, $Gadget, $Inject('$Fire'), $UI, $Item);" class="ng-scope"></uee:fire>
+                    </li>
+                </span><!-- end ngIf: $Gadget.tab.tabList.length<=7 --><!-- end ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) --><!-- ngIf: $Gadget.tab.tabList.length<=7 --><span ng-repeat="$Item in $Gadget.tab.tabList track by $id($index)" ng-if="$Gadget.tab.tabList.length<=7" class="ng-scope">
+                    <li id="601314805" ng-class="{last:$index==$Gadget.tab.tabList.length-1,active:$Gadget.tab.showTab.tabId==$Item.tabId}">
+                    <!-- ngIf: !$Gadget.tab.ptabid --><span ng-bind="$Item.tabName" ng-if="!$Gadget.tab.ptabid" class="ng-binding ng-scope">Casos</span><!-- end ngIf: !$Gadget.tab.ptabid --> 
+                    <!-- ngIf: $Gadget.tab.ptabid --> 
+                    <uee:fire event="click" script="$Controller.bes.ad.menu.tabs.changeTab($Page, $Gadget, $Inject('$Fire'), $UI, $Item);" class="ng-scope"></uee:fire>
+                    </li>
+                </span><!-- end ngIf: $Gadget.tab.tabList.length<=7 --><!-- end ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) --><!-- ngIf: $Gadget.tab.tabList.length<=7 --><span ng-repeat="$Item in $Gadget.tab.tabList track by $id($index)" ng-if="$Gadget.tab.tabList.length<=7" class="ng-scope">
+                    <li id="601314806" ng-class="{last:$index==$Gadget.tab.tabList.length-1,active:$Gadget.tab.showTab.tabId==$Item.tabId}" class="last">
+                    <!-- ngIf: !$Gadget.tab.ptabid --><span ng-bind="$Item.tabName" ng-if="!$Gadget.tab.ptabid" class="ng-binding ng-scope">Contactos</span><!-- end ngIf: !$Gadget.tab.ptabid --> 
+                    <!-- ngIf: $Gadget.tab.ptabid --> 
+                    <uee:fire event="click" script="$Controller.bes.ad.menu.tabs.changeTab($Page, $Gadget, $Inject('$Fire'), $UI, $Item);" class="ng-scope"></uee:fire>
+                    </li>
+                </span><!-- end ngIf: $Gadget.tab.tabList.length<=7 --><!-- end ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) -->
+                <!-- ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) --><!-- ngIf: $Gadget.tab.tabList.length>7 --><!-- end ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) --><!-- ngIf: $Gadget.tab.tabList.length>7 --><!-- end ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) --><!-- ngIf: $Gadget.tab.tabList.length>7 --><!-- end ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) --><!-- ngIf: $Gadget.tab.tabList.length>7 --><!-- end ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) --><!-- ngIf: $Gadget.tab.tabList.length>7 --><!-- end ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) --><!-- ngIf: $Gadget.tab.tabList.length>7 --><!-- end ngRepeat: $Item in $Gadget.tab.tabList track by $id($index) -->
+            </ul>
+            <!-- ngIf: $Gadget.tab.tabListMore && $Gadget.tab.tabListMore.length>1 -->
+            <div class="tab_popup ng-hide" ng-show="$Gadget.showTabList">
+                <ul>
+                <!-- ngRepeat: $Item in $Gadget.tab.tabListMore track by $id($index) -->
+                </ul>
+            </div>
+        </div>
+    </div><!-- end ngIf: $Gadget.tab.tabList -->
+</div>
+<div class="pl_content">
+    <!-- 动态加载组件 -->
+    <!-- 由于动态加载gadget组件时，通过对象传值绑定不是很好，所以定义为字段串型，组件中获取时将字符串通过JSON.parse转换为对象 -->
+    <!-- ngIf: $Gadget.tab.showTab && $Gadget.tab.showTab.gadgetName --><span ng-if="$Gadget.tab.showTab &amp;&amp; $Gadget.tab.showTab.gadgetName" class="ng-scope">
+        <div class="uee-gadget ng-scope bes-ad-overseascustview-customer" name="bes:ad-overseascustview-customer"><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-ad-sr-overseascustview/bes-ad-overseascustview-customer/bes-ad-overseascustview-customer.js--><!-- ueeScript: src=resource.root/bes/ad/ctz/gadget/bes-ad-sr-common/sr-ad-constant-ctz.js--> 
+    <!-- ueeGadgetAttr: name=undefined-->
+    <link type="text/css" rel="stylesheet" ng-href="resource.root/bes/ad/themes/default/resource/css/bes-ad-overseascustview-customer.css" class="ng-scope" href="resource.root/bes/ad/themes/default/resource/css/bes-ad-overseascustview-customer.css">
+	
+	
+	<uee:include src="$Gadget.$Path + '/bes-ad-overseascustview-customer.html'" class="ng-scope"><uee:fire init="" script="$Controller.bes.ad.overseascustview.customer.init($Page, $Gadget,$Fire,$UI);" class="ng-scope"></uee:fire>
+<uee:fire init="$Gadget.choosedCust.CustomerExVO &amp;&amp; $Gadget.dictList.OC_SEGMENT_MODE" script="$Controller.bes.ad.overseascustview.customer.choosedCustEvent($Page, $Gadget, $Inject('$Fire'), $UI)" class="ng-scope"></uee:fire>
+<style type="text/css" class="ng-scope">
+#changeLine 
+{ 
+    white-space: normal;
+    word-break: break-all;
+}
+</style>
+<!-- GENERAL CUSTOMER INFO -->
+<div class="panel ng-scope">
+    <!-- Customer Info -->
+    <div class="pl_title">
+        <span class="font_16 bold ng-binding" ng-bind="'ad.person.title.customerinfoUpperCase'|i18n">Información básica del Cliente</span>
+        <div class="btn_more fr">
+            <div ng-show="!$Gadget.showMoreUserInfoFlag" class="">
+                <span ng-bind="'ad.spanish.101'|i18n" class="ng-binding">Expandir</span>
+                <img src="resource.root/bes/ad/themes/default/resource/images/icon_01.png">
+            </div>
+            <div ng-show="$Gadget.showMoreUserInfoFlag" class="ng-hide">
+                <span ng-bind="'ad.spanish.102'|i18n" class="ng-binding">Colapso</span>
+                <img src="resource.root/bes/ad/themes/default/resource/images/icon_03.png">
+            </div>
+            <uee:fire script="$Controller.bes.ad.overseascustview.customer.moreShow($Page, $Gadget, $Fire, jEvent.$Target)" class="ng-scope"></uee:fire>
+        </div>
+    </div>
+    <div class="pl_content mt_15">
+        <div class="mt_15 form_con form_justify form_ellipsis user_info margin_bottom_revise line_height14">
+            <!-- Certificate Type: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.certtype'|i18n">Tipo de Identificación:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.idType">Cédula de Ciudadania</div>
+            </div>
+            <!-- Certificate No: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.certno'|i18n">Número de Identificación:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.idNumber">123456789</div>
+            </div>
+            
+            <!-- NIT information begin-->
+            <!-- ngIf: 'NIT'==$Gadget.choosed.idType -->
+            <!-- ngIf: 'NIT'==$Gadget.choosed.idType -->
+            <!-- ngIf: 'NIT'==$Gadget.choosed.idType -->
+            <!-- ngIf: 'NIT'==$Gadget.choosed.idType -->
+            <!-- ngIf: 'NIT'==$Gadget.choosed.idType -->
+            <!-- ngIf: 'NIT'==$Gadget.choosed.idType -->
+            <!-- ngIf: 'NIT'==$Gadget.choosed.idType -->
+            <!-- ngIf: 'NIT'==$Gadget.choosed.idType -->           
+            <!-- NIT information begin-->
+            
+            
+            <!-- First Name: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.firstName'|i18n">Primer nombre:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.firstName">WILMER</div>
+            </div>
+            <!-- Second firstname: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.secFirstName'|i18n">Segundo Nombre:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.middleName"></div>
+            </div>
+            <!-- Last Name: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.lastname'|i18n">Apellido:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.lastName">LAMILLA</div>
+            </div>
+            <!-- Second Last Name: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.secondlastname'|i18n">Segundo Apellido:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.secondLastName"></div>
+            </div>
+            <!-- Date of Birth: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.dateofbirth'|i18n">Fecha de Nacimiento:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.dateOfBirth|tz: $Page.tzDate"></div>
+            </div>
+            <!-- Occupation: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.occupation'|i18n">Ocupación:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.occupation"></div>
+            </div>
+            <!-- Gender: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.gender'|i18n">Sexo:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.gender"></div>
+            </div>
+            <!-- Title of a customer Values -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.title'|i18n">Título:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.title"></div>
+            </div>
+            <div class="more_content margin_bottom_revise">
+            <div ng-show="$Gadget.showMoreUserInfoFlag" class="ng-hide">
+                <!-- Customer Level: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.customerLevel'|i18n">Nivel del Cliente:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custLevel">Baja renta</div>
+                </div>
+                <!-- Email: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.email'|i18n">Email:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.email">diana.marcela.martinez.cifuentes@everis.com</div>
+                </div>
+                <!-- Segment: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.overseascustview.label.CustSegment'|i18n">Segmento:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.segment">Individual</div>
+                </div>
+                <!-- Sub-Segment: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.overseascustview.label.CustSubSegment'|i18n">Subsegmento:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.subSegment">Nuevo Prepago</div>
+                </div>
+                <!-- Customer status: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.custStatus'|i18n">Estado del Cliente:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custStatus">Activo</div>
+                </div>
+                <!-- social level: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.socialLevel'|i18n">Estrato:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.socialLevel"></div>
+                </div>
+                <!-- ethnic group: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.ethnicGroup'|i18n">Grupo Étnico:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.ethnicGroup"></div>
+                </div>
+                <!-- Facebook: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.facebook'|i18n">Facebook:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.facebook"></div>
+                </div>
+                <!-- Twitter: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.twitter'|i18n">Twitter:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.twitter"></div>
+                </div>
+                <!-- Instagram: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.instagram'|i18n">Instagram:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.instagram"></div>
+                </div>
+                <!-- Google: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.google'|i18n">Google:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.google"></div>
+                </div>
+                <!-- Contact number 1: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.contactNum1'|i18n">Número de contacto (celular):</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.contactNum1"></div>
+                </div>
+                <!-- Contact number 2: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.contactNum2'|i18n">Número de contacto 2:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.contactNum2"></div>
+                </div>
+                <!-- Contact number 3: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.contactNum3'|i18n">Número de contacto 3:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.contactNum3"></div>
+                </div>
+                <!-- Customer Creation Date: -->
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.createtime'|i18n">Fecha de Creación de Cliente:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.createTime|tz: $Page.tzDate">06/09/2019</div>
+                </div>
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.remark'|i18n">Observaciones:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.remark"></div>
+                </div>
+                <div class="form_group inline_block">
+                    <div class="form_label ng-binding" ng-bind="'ad.person.label.visCustInfo'|i18n">Visibilidad de la Información del Cliente:</div>
+                    <div class="form_control ng-binding" ng-bind="$Gadget.choosed.visCustInfo">Privado</div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- HOME ADDRESS -->
+<div class="panel ng-scope">
+    <!-- Home Address -->
+    <div class="pl_title font_16 bold ng-binding" ng-bind="'ad.person.title.homeAddressUpperCase'|i18n">Dirección de Residencia</div>
+    <div class="pl_content">
+        <div class="mt_15 form_con form_justify form_ellipsis user_info margin_bottom_revise line_height14">
+            <!-- Department: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.departmento'|i18n">Departamento:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custHomeAddress.department">BOGOTA DC</div>
+            </div>
+            <!-- City: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.city'|i18n">Ciudad:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custHomeAddress.city">BOGOTA DC</div>
+            </div>
+            <!-- Region: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.region'|i18n">Región:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custHomeAddress.region">BOGOTA</div>
+            </div>
+            <!-- Municipality: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.municipality'|i18n">Municipio:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custHomeAddress.municipality">BOGOTA DC</div>
+            </div>
+            <!-- Neighborhood: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.neighborhood'|i18n">Barrio:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custHomeAddress.neighborhood">A.S.D. - USAQUEN</div>
+            </div>
+            <!-- Full address: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.fullAddress'|i18n">Dirección completa:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custHomeAddress.fullAddress" title="CL 127 KR 12-28 ">CL 127 KR 12-28 </div>
+            </div>
+            <!-- Remark: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.remark'|i18n">Observaciones:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custHomeAddress.remark"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- OFFICE ADDRESS -->
+<div class="panel ng-scope">
+    <!-- Office Address -->
+    <div class="pl_title font_16 bold ng-binding" ng-bind="'ad.actualsubscriberuser.correrpondenceaddressUpperCase'|i18n">Dirección de Correspondencia</div>
+    <div class="pl_content">
+        <div class="mt_15 form_con form_justify form_ellipsis user_info margin_bottom_revise line_height14">
+            <!-- Department: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.departmento'|i18n">Departamento:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custOfficeAddress.department"></div>
+            </div>
+            <!-- City: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.city'|i18n">Ciudad:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custOfficeAddress.city"></div>
+            </div>
+            <!-- Region: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.region'|i18n">Región:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custOfficeAddress.region"></div>
+            </div>
+            <!-- Municipality: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.municipality'|i18n">Municipio:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custOfficeAddress.municipality"></div>
+            </div>
+            <!-- Neighborhood: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.neighborhood'|i18n">Barrio:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custOfficeAddress.neighborhood"></div>
+            </div>
+            <!-- Full address: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.fullAddress'|i18n">Dirección completa:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custOfficeAddress.fullAddress" title=""></div>
+            </div>
+            <!-- Remark: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" ng-bind="'ad.person.label.remark'|i18n">Observaciones:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.custOfficeAddress.remark"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Indicators -->
+<div class="panel cl40 ng-scope">
+    <!-- Indicators -->
+    <div class="pl_title font_16 bold ng-binding" ng-bind="'ad.person.label.indicators'|i18n">Indicadores</div>
+    <div class="pl_content">
+        <div class="mt_15 form_con form_justify form_ellipsis user_info margin_bottom_revise line_height14">
+            <!-- Deactivation Intention count: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" style="width:185px" ng-bind="'ad.person.label.intentionCount'|i18n">Número de intenciones de Retiro:</div>
+                <div class="form_control ng-binding" ng-bind="$Gadget.choosed.intentionCount">0</div>
+            </div>
+            <!-- Number of open service requests: -->
+            <div class="form_group inline_block">
+                <div class="form_label ng-binding" style="width:240px" ng-bind="'ad.person.label.serviceRequestNum'|i18n">Número de solicitudes de servicio abiertas:</div>
+                <div class="form_control  ng-binding" ng-bind="$Gadget.choosed.serviceRequestNum">0</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ng-scope">
+ <div class="uee-gadget ng-scope bes-ad-menuimage" actioneventid="CustomerInfo" gadget="" name="bes:ad-menuimage"><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-ad-menuimage/bes-ad-menuimage.js-->
+	
+	<!-- 对外暴露的模型
+		params内部要求
+		{
+			actionEventId ："应用的场景ID，对应OC_ACTION_EVENT表的ACTION_EVENT_ID",
+			serviceNumber : "号码"
+		}
+	-->
+	<!-- ueeGadgetAttr: name=styles-->
+	<!-- ueeGadgetAttr: name=actioneventid-->
+	<!-- ueeGadgetAttr: name=hiddenflag-->
+	<!-- ueeGadgetAttr: name=buttonflag-->
+	<!-- ueeGadgetAttr: name=titles-->
+	<!-- ueeGadgetAttr: name=event--><!-- 绑定事件名字 -->
+	<!-- ngRepeat: $Item in $Gadget.$Attrs.styles -->
+	<link type="text/css" rel="stylesheet" ng-href="resource.root/bes/ad/gadget/bes-ad-menuimage/css/bes-ad-menuimage.css" class="ng-scope" href="resource.root/bes/ad/gadget/bes-ad-menuimage/css/bes-ad-menuimage.css">
+	
+	
+	<uee:include src="$Gadget.$Path+'/bes-ad-menuimage.html'" class="ng-scope"><uee:fire init="" script="$Controller.bes.ad.menuimage.init($Page,$Gadget, $Inject('$Fire'));" class="ng-scope"></uee:fire>
+<uee:fire event="$bes.ad.menuimage.refresh" script="$Controller.bes.ad.menuimage.refresh($Page, $Gadget, $Event);" class="ng-scope"> 
+<div class="btn_block" style="border:none !important;">
+<!-- ngIf: $Gadget.$Attrs.titles -->
+	<!-- ngIf: ($Gadget.ActionEventList || []).length>0 --><div ng-class="{sub_btn_block:$Gadget.$Attrs.hiddenflag,sub_btn_block_auto:!$Gadget.$Attrs.hiddenflag}" ng-if="($Gadget.ActionEventList || []).length>0" class="ng-scope sub_btn_block_auto">
+		<!-- ngIf: !$Gadget.$Attrs.buttonflag --><div class="btn_height_block ml_15 ng-scope" ng-if="!$Gadget.$Attrs.buttonflag">
+			<!-- ngRepeat: $Item in $Gadget.ActionEventList --><span class="href_1 font_14 font_blue ng-scope" ng-repeat="$Item in $Gadget.ActionEventList" ng-show="$Item.showAuth == 'Y'">
+			<!-- ngIf: $Item.imageUrl -->
+			<a href="" id="$Item.actionId" ng-bind="$Item.actionName | i18n" class="ng-binding">Modificar la información del cliente</a></span><!-- end ngRepeat: $Item in $Gadget.ActionEventList -->
+		</div><!-- end ngIf: !$Gadget.$Attrs.buttonflag -->
+		<!-- ngIf: $Gadget.$Attrs.buttonflag -->
+		<!-- ngIf: $Gadget.$Attrs.hiddenflag -->
+	</div><!-- end ngIf: ($Gadget.ActionEventList || []).length>0 --></div></uee:fire></uee:include>
+
+</div>
+</div>
+
+</uee:include>
+</div>
+        <!-- <uee:gadget name="{{$Gadget.tab.showTab.gadgetName}}" params="{{$Gadget.tab.params}}"></uee:gadget> -->
+    </span><!-- end ngIf: $Gadget.tab.showTab && $Gadget.tab.showTab.gadgetName -->
+</div>
+</uee:fire></uee:fire></uee:include>
+</div>
+	</div>
+	<!-- ngIf: $Gadget.tab.layer2param.ptabid --><div ng-if="$Gadget.tab.layer2param.ptabid" class="ng-scope">
+		<div class="uee-gadget ng-scope bes-ad-menu-tabs" tab="$Gadget.tab.layer2param" event="$bes.ad.tap.layer2refresh" params="$Gadget.$Attrs.params" gadget="" name="bes:ad-menu-tabs"><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-ad-menu-tabs/bes-ad-menu-tabs.js-->
+    <link type="text/css" rel="stylesheet" ng-href="resource.root/bes/ad/gadget/bes-ad-menu-tabs/bes-ad-menu-tabs.css" class="ng-scope" href="resource.root/bes/ad/gadget/bes-ad-menu-tabs/bes-ad-menu-tabs.css">
+
+	<!-- <uee:gadget-attr name="busicode" defaultvalue="UNIFIED_VIEW"></uee:gadget-attr> 业务编码
+	<uee:gadget-attr name="seniorid"></uee:gadget-attr> 场景编码
+	<uee:gadget-attr name="ptabid"></uee:gadget-attr> 父级tab页签ID，为空时，取第一层tab页签 -->
+	
+	<!-- ueeGadgetAttr: name=undefined--> <!-- 组件绑定的入参模型 -->
+	<!-- ueeGadgetAttr: name=event--><!-- 绑定事件名字 -->
+	<!-- ueeGadgetAttr: name=event2--><!-- 绑定事件名字 -->
+    
+	<!-- ueeGadgetAttr: name=undefined--> <!-- 组件绑定的入参模型 -->
+	<!-- <uee:gadget-attr property="model"></uee:gadget-attr> 组件绑定的出参模型
+	<uee:gadget-attr property="validate"></uee:gadget-attr> 组件绑定的校验 -->
+
+	
+	<uee:include src="$Gadget.$Path + '/bes-ad-menu-tabs.html'" class="ng-scope"><uee:fire init="" script="$Controller.bes.ad.menu.tabs.init($Page, $Gadget);" class="ng-scope"></uee:fire>
+<uee:fire event="$bes.ad.tap.layer2refresh" script="$Controller.bes.ad.menu.tabs.refresh($Page, $Gadget, $Event);" class="ng-scope"> 
+ <uee:fire event="$bes.ad.tap.show" script="$Controller.bes.ad.menu.tabs.show($Page, $Gadget, $Event);" class="ng-scope">    
+<div class="pl_content">
+    <!-- ngIf: $Gadget.tab.tabList -->
+</div>
+<div class="pl_content">
+    <!-- 动态加载组件 -->
+    <!-- 由于动态加载gadget组件时，通过对象传值绑定不是很好，所以定义为字段串型，组件中获取时将字符串通过JSON.parse转换为对象 -->
+    <!-- ngIf: $Gadget.tab.showTab && $Gadget.tab.showTab.gadgetName -->
+</div>
+</uee:fire></uee:fire></uee:include>
+</div>
+	</div><!-- end ngIf: $Gadget.tab.layer2param.ptabid -->
+	<!-- ngIf: $Gadget.tab.layer3param.ptabid -->
+	<!-- ngIf: $Gadget.tab.layer4param.ptabid -->
+	
+</div><!-- end ngIf: $Gadget.DataIsReady --></uee:include>
+</div><!-- end ngIf: $Page.$Pojo.custinfo.custid && $Page.$Pojo.thirdflag!='SME' -->
+<!-- ngIf: $Page.$Pojo.custinfo.custid && $Page.$Pojo.thirdflag=='SME' -->
+</uee:include>
+</div>
+
+<!-- ueeIf: undefined --></div>
+
+
+<div class="bf_tips"><div class="head left"></div><div class="head right"></div><div class="head middle"></div><div class="mid"><div class="bf_tips_container"><div class="bf_tips_content"></div></div></div><div class="foot left"></div><div class="foot right"></div><div class="foot middle"></div></div><div class="fullcover" id="loadingcover" style="display: none;"><img class="loading" src="resource.root/bes/ad/images/indicator_verybig.gif"></div></body></html>

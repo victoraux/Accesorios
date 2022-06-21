@@ -1,0 +1,56 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.80")
+    }
+}
+plugins {
+
+    id 'java-library'
+
+}
+
+apply plugin: 'net.serenity-bdd.aggregator'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+
+
+dependencies {
+
+    implementation 'net.serenity-bdd:serenity-junit:2.0.80'
+    implementation 'net.serenity-bdd:serenity-cucumber:1.9.45'
+    implementation 'net.serenity-bdd:serenity-core:2.0.80'
+    implementation 'org.slf4j:slf4j-simple:1.7.7'
+    implementation 'com.google.guava:guava:23.0'
+    implementation group: 'org.apache.poi', name: 'poi', version: '3.17'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
+
+//    compile fileTree(dir: 'lib', include: '*.jar')
+
+}
+
+test {
+//ignora fallo de ejecucion es ejecutar las pruebas asi alguna falla
+    ignoreFailures = true
+}
+
+
+//configurar el encoding del proyecto
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+//continue asi falle algunas tareas de Gradle
+gradle.startParameter.continueOnFailure = true
+

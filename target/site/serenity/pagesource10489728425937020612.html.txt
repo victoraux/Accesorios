@@ -1,0 +1,418 @@
+<html xmlns:ng="" xmlns:uee="" xmlns:ui="" xmlns:bes=""><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+		<title>Portal BES</title>
+	
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+		<!-- <link rel="shortcut icon" type="image/ico" href="resource.root/bes/sm/login/img/favicon_jsmobile.png" /> -->
+		<link rel="shortcut icon" type="image/ico" href="resource.root/bes/sm/login/img/workbenchIcon/logo_cz.png">
+		<!-- <link rel="shortcut icon" type="image/ico" href="/logo_cz.ico" /> -->
+		
+		<link rel="stylesheet" type="text/css" href="resource.root/bes/sm/login/css/base_ctz.css">
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/pages.css">
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/Radio.css">
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/Checkbox.css">
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/Droplist.css">
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/Charts.css">
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/ProcessBar.css">
+		
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/fast-entry.css">
+	
+		<script type="text/javascript" src="resource.root/themes/pc/app/app.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/Droplist.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/Checkbox.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/Radio.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/Pages.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/chart/getColor.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/chart/Cords.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/chart/CircleProcess.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/ProcessBar.js"></script>
+	<link rel="stylesheet" type="text/css" href="/oc/themes/pc/app/datetime/app.datetime.min.css"><style type="text/css">.uee-view {min-height:340px;}</style><link rel="shortcut icon" type="image/ico" href="resource.root/bes/sm/login/img/workbenchIcon/logo_cz.png"> <script type="text/javascript" src="resource.root/bes/ad/js/ad-control.js"></script><script type="text/javascript" src="resource.root/bes/ad/js/loadcss.js"></script><link rel="stylesheet" type="text/css" href="/oc/bes/ad/css/adStyleAdapter.css"></head>
+
+	<body novalidate="novalidate">
+    	<uee:include src="'pages/Framework_ctz.html'"><link href="resource.app/app.css" type="text/css" rel="stylesheet" class="ng-scope">
+<!-- <link rel="stylesheet" type="text/css"
+	href="resource.root/bes/sm/login/css/DefaultScroll.css" />
+<link rel="stylesheet" type="text/css"
+	href="resource.root/bes/sm/login/css/TabContainer.css" /> -->
+<link rel="stylesheet" type="text/css" href="resource.root/bes/sm/login/css/scroll_tabcontainer.css" class="ng-scope">
+<link rel="stylesheet" type="text/css" href="resource.root/bes/sm/login/css/btn_base.css" class="ng-scope">
+<link rel="stylesheet" type="text/css" href="resource.root/bes/sm/login/css/framework.css" class="ng-scope">
+<link rel="stylesheet" type="text/css" ng-href="resource.root/bes/sm/login/css/bme.btn.css" class="ng-scope" href="resource.root/bes/sm/login/css/bme.btn.css">	
+<!-- <link rel="stylesheet" type="text/css"
+	href="resource.root/bes/sm/login/css/beshelp.css" />
+<link rel="stylesheet" type="text/css"
+	href="resource.root/bes/sm/login/css/notice.css" /> -->
+<link href="resource.root/themes/pc/app/app.css" type="text/css" rel="stylesheet" class="ng-scope">
+<link rel="stylesheet" type="text/css" href="../../ad/css/base.css" class="ng-scope">
+<link rel="stylesheet" type="text/css" href="../../ad/css/currentOrder.css" class="ng-scope">
+<!-- <link rel="stylesheet" type="text/css" href="resource.root/bes/sm/login/css/tipInformation.css"/> -->
+<!--<link href="resource.root/bes/sm/login/css/button.css" rel="stylesheet" type="text/css" />-->
+<!-- <link href="resource.root/bes/sm/login/css/selectBox.css" rel="stylesheet" type="text/css" /> -->
+<!--  <link href="resource.root/bes/sm/login/css/switchContextualInfo.css" rel="stylesheet" type="text/css"/> -->
+<!-- ueeScript: src=resource.root/bes/sm/login/js/Tab.js-->
+<!-- ueeScript: src=resource.root/bes/sm/login/js/PortalLeftMenu.js-->
+<!-- ueeScript: src=resource.root/bes/sm/login/js/PortalRightHeadMenu.js-->
+<!-- ueeScript: src=resource.root/bes/sm/login/js/DefaultScroll.js-->
+<!-- ueeScript: src=resource.root/bes/sm/login/js/publicfunc.js-->
+<!-- ueeScript: src=resource.root/bes/sm/login/js/tabset.js-->
+<!-- ueeScript: src=resource.root/bes/sm/login/js/bes.portal.tabpanel.client.js-->
+<!-- ueeScript: src=resource.root/bes/sm/login/js/operatorInfo_ctz.js-->
+<!-- ueeScript: src=resource.root/bes/sm/login/js/portalcallback.js-->
+<!-- ueeScript: src=resource.root/bes/sm/login/js/portalgadget.js-->
+<!-- ueeScript: src=resource.root/bes/sm/login/js/framework_ctz.js-->
+
+<!-- <div id="workPlace" style="visibility: visible">
+    <iframe id="middleFrame" name="middleFrame" height="0" width="0" frameborder="no" border="0" style="display: none" src="pages/ngcrm/leftFrame.html"></iframe>
+</div> -->
+<uee:fire event="$bes.context.loaded" script="onLoadPage(this)" class="ng-scope"></uee:fire>
+<div class="uee-gadget ng-scope bes-common-pagecontext" name="bes:common-pagecontext" mock="false"><!-- ueeScript: src=/oc/bes/common/base/gadget/bes-common-pagecontext/bes-common-pagecontext.js-->
+  <link type="text/css" rel="stylesheet" ng-href="/oc/bes/common/base/gadget/bes-common-pagecontext/bes-common-pagecontext.css" class="ng-scope" href="/oc/bes/common/base/gadget/bes-common-pagecontext/bes-common-pagecontext.css">
+  
+  
+  <uee:fire event="$bes.context.load" service="PageContextService/init" target="$Gadget.$Data" onafter="$Controller.bes.common.pagecontext.loaded()" class="ng-scope"></uee:fire>
+  <uee:fire init="" script="$Controller.bes.common.pagecontext.init($Gadget)" class="ng-scope"></uee:fire>
+</div>
+<div id="top_gadget" class="ng-scope">
+</div>
+<style class="ng-scope">
+.logo img {
+    width: 80%;
+    height: 80%;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+</style>
+<div class="pgHeader menu_btn ng-scope">
+    <div class="right" id="rightheadermenu">
+        <div class="accountOpt">
+            <div class="ao-droplist" title="Operador"></div>
+            <img class="ao-header" src="img/userHeaderSmall.png" title="Operador">
+            <div class="ao-popup">
+                <ul>
+                    <li>
+                        <label class="ng-binding">Cuenta:</label>
+                        <div title="101" class="ng-binding">101</div>
+                    </li>
+                    <!--
+					<li><label>{{'SM.LOGIN.LABEL.OPER_NAME' | i18n}}</label>
+						<div id="bes_sm_portal_userName_div"
+							title="{{$Model.userInfo.userName}}">
+							<input id="bes_sm_portal_userName_input" type="text"
+								class="disableEdit" readonly /> <span
+								id="bes_sm_portal_userName_span"
+								class="editSpan userNameSpan disableEdit" ></span>
+						</div></li>
+					-->
+                    <li>
+                        <label class="ng-binding">Primer Nombre:</label>
+                        <div id="bes_sm_portal_firstName_div" title="" class="ng-binding">
+                        </div>
+                    </li>
+                    <li>
+                        <label class="ng-binding">Apellido:</label>
+                        <div id="bes_sm_portal_lastName_div" title="" class="ng-binding">
+                        </div>
+                    </li>
+                    <li>
+                        <label class="ng-binding">Oganización:</label>
+                        <div title="CE PRUEBAS QA" class="ng-binding">CE PRUEBAS QA</div>
+                    </li>
+                    <li>
+                        <label class="ng-binding">BE:</label>
+                        <div title="Colombia Telecomunicaciones S.A. E.S.P. BIC" class="ng-binding">Colombia Telecomunicaciones S.A. E.S.P. BIC</div>
+                    </li>
+                    <li>
+                        <label class="ng-binding">Región:</label>
+                        <div title="BOGOTA NORTE" class="ng-binding">BOGOTA NORTE</div>
+                    </li>
+                    <li>
+                        <label class="ng-binding">EMail:</label>
+                        <div id="bes_sm_portal_email_div" title="">
+                            <input id="bes_sm_portal_email_input" type="text" class="beforeEdit" style="color: rgb(51, 51, 51);"> <span id="bes_sm_portal_email_span" class="editSpan emailSpan beforeEdit" title="Modificar"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <label class="ng-binding">MSISDN:</label>
+                        <div id="bes_sm_portal_phone_div" title="">
+                            <input id="bes_sm_portal_phone_input" type="text" class="beforeEdit" style="color: rgb(51, 51, 51);"> <span id="bes_sm_portal_phone_span" class="editSpan phoneSpan beforeEdit" title="Modificar"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <label class="ng-binding">Código del vendedor:</label>
+                        <div id="bes_sm_portal_sellercode_div" title="" class="ng-binding">
+                        </div>
+                    </li>
+                    <li>
+                        <label class="ng-binding">Bienvenido:</label>
+                        <div id="bes_sm_portal_welcom_div" title="Bienvenido al sistema BES!">
+                            <input id="bes_sm_portal_welcome_input" type="text" class="beforeEdit" style="color: rgb(51, 51, 51);"> <span id="bes_sm_portal_welcome_span" class="editSpan welcomeSpan beforeEdit" title="Modificar"></span>
+                        </div>
+                    </li>
+                    <li class="lastLiOpt">
+                        <!--
+						<div class="ao-updatepwd"
+							title="{{'SM.LOGIN.TIPS.UPDATE_PWD' | i18n}}">
+							<span id="bes_sm_portal_updatePwd_pic"></span>{{'SM.LOGIN.LABEL.UPDATE_PWD'
+							| i18n}}
+						</div>
+						<div class="ao-lock" title="{{'SM.LOGIN.TIPS.LOCK' | i18n}}">
+							<span id="bes_sm_portal_lock_pic"></span>{{'SM.LOGIN.LABEL.LOCK'
+							| i18n}}
+						</div>
+						-->
+                        <div class="ao-exit ng-binding" title="Desconectarse del sistema">
+                            <span id="bes_sm_portal_exit_pic"></span>Desconectarse
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div style="display: none">
+                <input name="$Model.loginid" id="ipt_loginid" property="$Model.loginid">
+                <input name="$Model.lang" id="ipt_lang" property="$Model.lang">
+            </div>
+        </div>
+        <div class="headerMenu" id="headerMenu">
+        </div>
+    </div>
+    <a id="beslogo" style="overflow: hidden; height: 100%" ref="#" name="SM.LOGIN.TITLE.PORTAL_SWITCH_CONTEXTDATA" ishttps="false" class="logo toLeft"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAAAtCAMAAACnKxZRAAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////+3leKCAAAAEHRSTlMAv4BAEO/fYM8wcCCfUK+PoNIPQQAAA/JJREFUaN7tmtmaoyAQhVllB9//aceocABDHCf9zUzsPjdRWawfi6oyCfnRj8binHwjKT0vot+F2eh5FyPfQUbORZbcXw9eyJA7iDPGlBs06rkWJZ8vNW0sSTxtnVt9fuDyhUU/I546YE8+XJl3QBzmXoJ8tMLJDqUH4ED+mmBCJF8kkUPwINE6NP0zn6ZfGStZj8MHDg9N5Ez/M/B0wBEHBzjfxNyyRcGtQ8Lj2LYLZxRbpMyLMv04oeXmCbDj21zNGMFXA855zREnHXLSiRMIVlaFclf2vGSiuNFUlnPbMnO1K82+k/jjExPuqsMIbV1SepEt8OhwojQfZQZFx6C8FE0feYj56ICLsrKO18DoPwaG5Gaqm9BhrDGQbh3gKPY6jEP0WRjw+5ipThO8Ak7zGTCIBdp/D3gePsHeVh2Exbz9mlDGWJK7FWk5ocVZ3N7B2v2iIyRmlkxgKmD5mMPyRSzRDDQ9tu26yRILS5Pa7saKBZ5xbk55+VNgaY45KQqsLj2EeZt9F1HPZnvQARdZCQWA5/Wnexml8U6jcYMzwYAxMe1itxgB1yHOVs6T4L5ICnR3Y1tdugiM+AML/iQLg/jhPS4eAvOTRJz6+MM7M2VdJ8VtuMibeT9MAN7cagrnwKoCplfr6CMy1X30wSNvlv8MOLt24w/6AQWzOYBzaTAl9xxY2Dg92mm8CAyAc/EvBc7uaPKayzK4CSxaPQFWSHxvAGv9kldjC34RsCmbWGbnRuERUKcYzAQ/fh845YkGUm0Wm94Cht/qnIUDgFcJpYtvYSaUupIu0m8AuzWcDCVFC0zfBkb29esCAjjLpH0rl5nwgL3AgCvAKGra14Tx+6D4U+DU3LCkeL/NyI7A8GyXZ8KCCfLHwAzAyMkHha5O8ZeANTrg4h6shF2ZjsCoe/g2SMNg+kZaUnUQnkYe3Rdm7BKw35nwXNHXTvm8A4ZDcYT07gmnq8AgsDgZezScIFwA3hdV87VdIwQiJfIO2CpHSCl83D6DtNzkydZ2vr5yXQFGFIovs7Lqd4C5AAzPmfJn3bkfnG0qUZjW4aUc6txsrwJvwyQc7uUXHBa9LwCHQUSgeMAdMCRNnXwPeViLq8AJN8VZq9i/CrKLwCTIiiDU+wlju9dDFB71DH2lRR25ChxK5TFMTaqrvX0X9yileQkcXeSy/y/Hqil/5ylaQaBEFxlSDY7rgY2r4+moKkOZp7GdzIe9CRacS7T7Sg2qDuCxQD5bsY1DqKnv+ouwar/VMb1TTx/+w8rIp+Pge1l5j5+Da/nuBUjJe/Pm/I8Lzhdcfzd/RtiKTdFuPaWRhVviEiLoPV33hdzn/4vhR5t+Aefnm+XAF1XHAAAAAElFTkSuQmCC"></a>
+    <div ng-show="$Model.portalParams.needShowCurrentBe" id="crt-be" style="float:left;margin-top:18px;color:#fff;cursor:default;margin-left:10px" class="ng-hide" title="Actual BE:Colombia Telecomunicaciones S.A. E.S.P. BIC">101</div>
+    <div class="notice openwithtab" id="noticetop" style="display: none">
+        <img style="float: left" src="img/notice_bgd.png"> <img style="float: left; margin-top: 3px; margin-left: -210px;" src="img/notice_top.png">
+        <!-- modigy by zWX376212 2016-7-25 DD-AR-E01721565 SM-公告能力支撑 -->
+        <!-- 支持配置公告的滚动方向, 0:从下向上;1:从左向右, 支持扩展 -->
+        <!-- 公告从下向上滚动-->
+        <!-- ngIf: '0' == $Model.portalParams.noticeRollDirection --><div ng-if="'0' == $Model.portalParams.noticeRollDirection" style="float: left; margin-top: 3px; margin-left: -188px; width: 200px" id="noticelistdiv" class="ng-scope">
+        </div><!-- end ngIf: '0' == $Model.portalParams.noticeRollDirection -->
+        <!-- 公告从右向左滚动-->
+        <!-- ngIf: '1' == $Model.portalParams.noticeRollDirection -->
+    </div>
+    <div class="searchBar" tabindex="-1" style="left:700px;">
+        <div class="droplist">
+            <div class="droplistIcon"></div>
+            <!-- <div class="sh-value" searchid="all-function">全部</div> -->
+            <div class="sh-value ng-binding" searchid="menuSearch">Menú</div>
+            <div class="searchPopup" style="display: none;">
+                <ul>
+                    <li style="height: 0px;"></li>
+                    <!-- <li class="selected" id="all-function">全部</li> -->
+                    <!-- <li id="packages">套餐</li> -->
+                    <!-- <li id="goods">商品</li> -->
+                    <li class="selected ng-binding" id="menuSearch">Menú</li>
+                </ul>
+            </div>
+            <!-- <div class="searchMenuPopup">
+						<ul>
+							
+						</ul>
+					</div>-->
+        </div>
+        <div id="search_button_info" class="searchButton"></div>
+        <div class="sh-inputCon">
+            <div>
+                <input id="search_info_text" type="text" style="font-size: 14px; color: rgb(51, 51, 51);" onfocus="this.style.color='#333333'" prompt="Vista 360° Individual">
+            </div>
+        </div>
+        <div id="showmenudiv" style="position: relative; top: 1px; overflow: hidden; display: block; height: 70.8099px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;" class="searchBuyPanel">
+            <div class="tab"><div class="showMenuDiv" title="Operación Integrada (Nuevo) >> Consulta Clientes >> Vista 360° Individual" style="width: 95%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; line-height: 30px;"><a href="javascript:;" innerid="60131201608191600" name="Vista 360° Individual" openmode="0">Operación Integrada (Nuevo) &gt;&gt; Consulta Clientes &gt;&gt; Vista 360° Individual</a></div><div class="even showMenuDiv" title="Operación Integrada (Nuevo) >> Consulta Clientes >> Vista 360° NIT" style="width: 95%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; line-height: 30px;"><a href="javascript:;" innerid="6013120171103100645" name="Vista 360° NIT" openmode="0">Operación Integrada (Nuevo) &gt;&gt; Consulta Clientes &gt;&gt; Vista 360° NIT</a></div><div class="showMenuDiv" title="Operación Integrada(fijo) >>   Gestión Productos Fijos >> Venta Oferta Individual y Empaquetada (Fija)" style="width: 95%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; line-height: 30px;"><a href="javascript:;" innerid="6013120180322134155" name="Venta Oferta Individual y Empaquetada (Fija)" openmode="0">Operación Integrada(fijo) &gt;&gt;   Gestión Productos Fijos &gt;&gt; Venta Oferta Individual y Empaquetada (Fija)</a></div></div>
+        </div>
+    </div>
+</div>
+<div class="navigatorBar ng-scope" style="z-index: 0;">
+    <div class="wrap">
+        <div class="tabCon">
+            <div class="tab">
+                <ul class="floatCon toLeft">
+                <li innerid="6010100090012" title="Mi Mesa de Trabajo" menuid="6010100090012" style="width: 177px;" class="selected">									<div class="selector"></div>									<div class="tab-title"><span>Mi Mesa de Trabajo</span></div>								  </li></ul>
+                <div class="tab-menu" style="display: none;"></div>
+            </div>
+            <div class="tab-popup" style="display: none;">
+                <div class="scrollbar_container_outer" style="width: 179px;">
+                    <div class="scrollbar_container" id="tab-scrollbar" style="position: relative; overflow: hidden;">
+                        <div class="scrollbar_container_inner" style="position: absolute; top: 0px; left: 0px;">
+                            <ul>
+                            </ul>
+                        </div>
+                    <div class="LeftxScrollBar" style="width: 100px; display: none;"><div class="ScrollbarTrack" style="width: 100px;"><div class="ScrollbarHandle"><span class="ScrollbarHandleR"><span class="ScrollbarHandleC"></span></span></div></div><span class="ScrollbarArrow1"></span><span class="ScrollbarArrow2"></span></div></div>
+                <div class="LeftScrollBar2" style="height: 100px; display: none;"><div class="ScrollbarTrack" style="height: 100px;"><div class="ScrollbarHandle" style="top:4px"><span class="ScrollbarHandleR"><span class="ScrollbarHandleC"></span></span></div></div><span class="ScrollbarArrow12"></span><span class="ScrollbarArrow22"></span></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="toolbar menu_btn ng-scope">
+    <ul id="leftMenu" class="toolCon tool_v2">
+    </ul>
+</div>
+<!--打印-->
+<div id="printdiv" class="ng-scope">
+    <!-- ngIf: false == $Model.isManagePortal --><div class="print_block ng-scope" ng-if="false == $Model.isManagePortal">
+        <div class="print_header">
+            <div class="tab">
+                <div class="tab_nav">
+                    <ul>
+                        <li innerid="besprint" class="active"><span>BES</span></li>
+                        <li innerid="icrmprint"><span>iCRM</span></li>
+                        <li innerid="crmprint" class="last"><span>CRM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="print_close"></div>
+        </div>
+        <div class="print_content">
+            <iframe frameborder="no" border="0" innerid="besprint" id="besprintiframe" name="besprintiframe" width="100%" height="100%" scrolling="no"></iframe>
+            <iframe frameborder="no" border="0" innerid="icrmprint" width="100%" height="100%" style="display: none"></iframe>
+            <iframe frameborder="no" border="0" innerid="crmprint" width="100%" height="100%" style="display: none"></iframe>
+        </div>
+    </div><!-- end ngIf: false == $Model.isManagePortal -->
+    <!--打印 end-->
+</div>
+<div class="main-right ng-scope">
+    <!--弹窗1-->
+    <div class="win_cover" style="display: none;">
+        <div class="windowBoxwrap" style="position: absolute; left: 50%; top: 50%; z-index: 108;">
+        </div>
+    </div>
+    <!--弹窗1 END-->
+<div innerid="6010100090012" class="tabcontainer" style="display: block; width: 1675px; height: 709px;">				              <iframe innerid="6010100090012" frameborder="no" border="0" width="100%" height="100%" src="https://10.203.114.11:443/oc/resource.root/bes/sm/login/pages/workbench.html?menuid=6010100090012&amp;build=undefined" style="height: 99%;">                                    </iframe></div></div>
+<!--锁屏-->
+<div id="lockPageDiv" class="win_lock_bg ng-scope" style="display: none;">
+    <div class="win_lock">
+        <div class="fl">
+            <img class="normal_img" src="img/lock.png" style="display: inline;" width="80%" height="80%">
+        </div>
+        <div class="r_contnet">
+            <p class="u_name mb_10 ng-binding" ng-bind="$Model.userInfo.userName">Root Operator</p>
+            <p class="u_no ng-binding" ng-bind="$Model.userInfo.loginId">101</p>
+            <p class="lock ml_20 ng-binding">Pantalla de bloqueo</p>
+            <div class="mt_10">
+                <input id="lockpage_pwd" type="password" class="lock_input" style="color: white; font-size: 20px;" property="$Model.lockpage_pwd" onkeypress="if(event.keyCode==13){lockpage.unlock()}">
+                <span id="unlockpage_btn" class="icon"><uee:fire script="lockpage.unlock()" class="ng-scope"></uee:fire></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--锁屏 end-->
+<style class="ng-scope">
+.font_left .uee-inputele-view {
+    padding: 0 0 0 0;
+    color: #7f7f7f;
+}
+</style>
+<div id="tip_footdiv" class="ng-scope">
+    <div class="font_right ng-binding">
+        Bienvenido al sistema BES!
+    </div>
+    <div class="font_left ng-binding">
+        Última hora de inicio de sesión:
+        <div class="font_right">
+            <!-- {{$Model.tipHelperInformation.lastLoginTime}} -->
+            <span class="uee-datetime-container ng-scope" kind="datetime" viewmode="'view'" property="$Model.tipHelperInformation.lastLoginTime" id="uee-001">       	<div ng-show="viewmode" class="ng-hide">		<ng:switch on="$input.kind">		<!-- ngSwitchWhen: time -->		<!-- ngSwitchDefault:  --><div ng-switch-default="" style="" class="uee-datetime uee-ipt-ele uee  ng-scope" ng-class="{&quot;u-dst&quot;:$Dstshow}">			<div class="uee-border uee-input">				<input id="uee-001_value" ng-show="!pickByLocal" name="$Model.tipHelperInformation.lastLoginTime" onfocus="jBME.EFT.onfocus(this)" ng-disabled="disable" onblur="jBME.EFT.onblur(this)" class="ele_normal uee-input-normal datetime_input hasDatepicker" value="21/06/2022 15:02:44" placeholder="" instid="0">			    <!-- ngIf: pickByLocal -->            </div>			<div id="uee-001_input_img" class="datetimepicker_div_trigger" title="Seleccionar fecha"></div>			<div id="uee-001_bmeDSTImg" ng-show="$Dstshow" class="datetimepicker_DST ng-hide"></div>		</div>		<input type="hidden" id="uee-001_ueeDTMShowFmt" name="$Model.tipHelperInformation.lastLoginTime_ueeDTMShowFmt" value="dd/MM/yyyy HH:mm:ss">		</ng:switch>		</div>		<div class="uee-inputele-view" style="height: auto" ng-show="!viewmode">		  <div class="uee-border ng-binding" style="line-height:30px" ng-bind="$input.text">21/06/2022 15:02:44</div>		</div></span>
+        </div>
+    </div>
+    <div class="font_left ng-binding">
+        Resultado de Inicio de sesión:
+        <div class="font_right ng-binding">
+            Inicio de sesión Exitoso
+        </div>
+    </div>
+    <div class="font_left ng-binding">
+        Dirección IP:
+        <div class="font_right ng-binding">
+            10.201.247.136
+        </div>
+    </div>
+</div>
+<!-- ueeScript: src=resource.root/bes/sm/login/js/logout.js-->
+<!-- ueeScript: src=resource.root/bes/sm/login/js/lockpage.js-->
+<!-- ueeScript: src=resource.root/bes/common/base/js/lib/RSA.js-->
+<!-- ueeScript: src=resource.root/bes/common/base/js/algorithm/encrypt.js-->
+<!-- ueeScript: src=resource.root/bes/sm/login/js/tipInformation.js-->
+<uee:fire init="" script="clearUserSession(this)" class="ng-scope"></uee:fire>
+<uee:fire init="" script="initBesPortalCookie(this)" class="ng-scope"></uee:fire>
+<uee:fire init="" script="initSecondContext(this)" class="ng-scope"></uee:fire>
+<uee:fire init="" script="initPortalType(this)" class="ng-scope"></uee:fire>
+<uee:fire init="" script="tipHelp.initTip(this)" class="ng-scope"></uee:fire></uee:include>
+    	
+    	<uee:fire init="" script="initTitle(this)" class="ng-scope">
+			<script>
+			function initTitle($Scope) {
+				//var title = window.$UEE.i18n('SM.LOGIN.TITLE.PORTAL_TITLE');
+				//$(document).attr("title", title);
+				
+				var $Model = $Scope.$Model;
+				
+				// ��ʱ�ȶ�u-token
+				$Model.check_CurrentUToken = getCookie('u-token');
+				
+				$Model.intervalId = setInterval("isSameUToken()", 5000);
+			}
+			
+			function getCookie(name) {
+				var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+				if (arr = document.cookie.match(reg))
+					return unescape(arr[2]);
+				else
+					return null;
+			}
+			
+			function isSameUToken(){
+				var $Scope = $(document).scope();
+				var $Model = $Scope.$Model;
+				var check_LatestUToken = getCookie('u-token');
+				if (check_LatestUToken != undefined && check_LatestUToken != $Model.check_CurrentUToken){
+					var $Fire = $Scope.$Get('$Fire');
+					var i18n = $UEE.i18n;
+					
+					//cookie��utoken����������ʱ��
+					clearInterval($Model.intervalId);
+					
+					$Fire({
+						'service' : '/SMLoginAction/getloginid',
+						target : "$Model.check_LatestLoginId"
+					}, $Scope).onafter(function(){
+						var check_CurrentLoginId = $Model.userInfo.loginId;
+						var check_LatestLoginId = $Model.check_LatestLoginId;
+						
+						var title = "";
+						var info = "";
+						
+						//�����½�˺ű�����򵯳���ʾ�˺ű����ʾ��Ϣ����ȷ��ˢ��ҳ�棬�ر���ʾ�����ö�ʱ��
+						if (check_CurrentLoginId != check_LatestLoginId){
+							
+							title = i18n('SM.PORTAL.TITLE.RELOGIN');
+							info = i18n('SM.PORTAL.TIPS.RELOGIN').replace("{oldLoginId}", check_CurrentLoginId).replace("{newLoginId}", check_LatestLoginId);
+							/*$(document).scope().$UI.msgbox.info(title, info, function(){
+								window.location.reload();
+							 });
+							 */
+							$(document).scope().$UI.msgbox.info(title, info, reloadPage, null, resetInterval);
+						}
+						else{
+							//�˺�û�б����ֱ���滻��ǰtoken����ֹ��ͣ������
+							$Model.check_CurrentUToken = check_LatestUToken;
+							resetInterval();
+						}
+						
+					}).onerror(function(){
+						var errTitle = $UEE.i18n('SM.PORTAL.TITLE.RELOGIN');
+						var errMsg = $UEE.i18n('SM.PORTAL.MSG.CHECK_DOMAIN_FAILED');
+						$(document).scope().$UI.msgbox.info(errTitle, errMsg, reloadPage, reloadPage, reloadPage);
+						return false;
+					});
+				}
+			}
+
+			function resetInterval(){
+				$Model.intervalId = setInterval("isSameUToken()", 5000);
+			}
+
+			function reloadPage(){
+				window.location.reload();
+			}
+
+			</script>
+		</uee:fire>
+	
+
+<div class="bf_tips"><div class="head left"></div><div class="head right"></div><div class="head middle"></div><div class="mid"><div class="bf_tips_container"><div class="bf_tips_content"></div></div></div><div class="foot left"></div><div class="foot right"></div><div class="foot middle"></div></div><div id="datetimepicker_div"></div><object id="DBScreenOCX" name="DBScreenOCX" width="0" height="0" classid="clsid:43082EBE-9478-445E-BF83-2727A10738D3" viewastext=""></object>
+</body></html>
