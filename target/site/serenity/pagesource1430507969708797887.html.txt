@@ -1,0 +1,195 @@
+<html xmlns:ng="" xmlns:uee="" xmlns:ui="" xmlns:bes=""><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="resource.root/themes/pc/app/app.css" type="text/css" rel="stylesheet">
+<link href="resource.root/bes/ad/css/base.css" type="text/css" rel="stylesheet">
+<link href="resource.root/bes/ad/css/style.css" type="text/css" rel="stylesheet">
+<link href="resource.root/bes/ad/css/components.css" type="text/css" rel="stylesheet">
+<link href="resource.root/bes/ad/css/newPayAccount.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="resource.root/bes/ad/css/AccountInfo.css">
+<link rel="stylesheet" href="resource.root/bes/ad/css/bme.datetimepicker.css">
+<link rel="stylesheet" href="resource.root/bes/ad/css/bme.shadow.css">
+
+<script src="resource.app/app.js" type="text/javascript"></script>
+<script type="text/javascript" src="resource.root/bes/ad/js/ui.datetimepicker.bmefix.js"></script>
+<script type="text/javascript" src="resource.root/bes/ad/js/jquery.ui.i18n.all.bmefix.js"></script>
+<script src="resource.root/bes/ad/js/jbme.poper.js" type="text/javascript"></script>
+<script src="resource.root/bes/ad/js/base.js" type="text/javascript"></script>
+<script src="resource.root/bes/ad/js/ad-util.js" type="text/javascript"></script>
+<script src="resource.root/bes/ad/js/callchain.js" type="text/javascript"></script>
+<script src="resource.root/bes/ad/js/Date.js" type="text/javascript"></script>
+<script src="resource.root/bes/ad/js/Checkbox.js" type="text/javascript"></script>
+<script src="resource.root/bes/ad/js/Dialog.js" type="text/javascript"></script>
+<script src="resource.root/bes/ad/js/Radio.js" type="text/javascript"></script>
+<script src="resource.root/bes/ad/js/Pages.js" type="text/javascript"></script>
+<script src="resource.root/bes/ad/js/Droplist.js" type="text/javascript"></script>
+<script src="resource.root/bes/ad/js/common-group.js" type="text/javascript"></script>
+<script src="resource.root/bes/ad/js/ngcrmPub.js" type="text/javascript"></script>
+<!-- <script src="resource.root/bes/ad/js/BuriedPointStatistics.js" type="text/javascript"></script> -->
+<title>Customer Authcation</title>
+<script type="text/javascript" src="resource.root/bes/ad/js/BuriedPointStatistics.js"></script><script type="text/javascript"></script></head>
+<body style="background-color: #ffffff" novalidate="novalidate">
+	<business name="business" start-step="index"> <step name="index" view="resource.root/bes/ad/usl/login.uslx"></step> </business>
+	<div class="uee-page" rendertime="render me cost 24ms"><div class="uee-gadget ng-scope bes-ad-authentication" classname="ochasRecommend" gadget="" name="bes:ad-authentication"><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-ad-authentication/authentication.js--><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-ad-authentication/multipleChoiceQuestionsHandle.js--><!-- ueeScript: src=resource.root/bes/ad/js/ocalert.js--><!-- ueeScript: src=resource.root/bes/common/base/js/lib/RSA.js--><!-- ueeScript: src=resource.root/bes/common/base/js/algorithm/encrypt.js--><!-- ueeScript: src=resource.root/bes/common/base/js/algorithm/encrypt.js-->
+    <!-- ueeGadgetAttr: name=authId-->
+    <!-- ueeGadgetAttr: name=classname-->
+    <!-- IT32 需求DD-AR-E01857677 校验适配鉴权页面 传入三个值控制按钮功能以及是否展示， -->
+    <!-- ueeGadgetAttr: name=issubmitavaliable-->
+    <!-- ueeGadgetAttr: name=showauthcheck-->
+    <!-- ueeGadgetAttr: name=isskipshow-->
+    <!-- ueeGadgetAttr: name=busiCode-->
+    <!-- ueeGadgetAttr: name=fixcheckflag-->
+     <!-- Licencse Email属性修改的Customer Authentication，控制页面展示 -->
+    <!-- ueeGadgetAttr: name=licenseemailauthflag-->
+    
+    <link type="text/css" rel="stylesheet" ng-href="resource.root/bes/ad/themes/default/resource/css/changePayment.css" class="ng-scope" href="resource.root/bes/ad/themes/default/resource/css/changePayment.css">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/themes/default/css/base.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/themes/default/resource/css/Droplist.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/themes/default/resource/css/Radio.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/themes/default/resource/css/Checkbox.css" class="ng-scope">
+
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/themes/default/resource/css/framework.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/themes/default/resource/css/Date.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/themes/default/resource/css/pages.css" class="ng-scope">
+    
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/themes/default/resource/css/nrny/newbase.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/themes/default/resource/css/personal.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/themes/default/resource/css/cards.css" class="ng-scope">
+    <link rel="stylesheet" href="resource.root/bes/ad/ctz/themes/default/resource/css/wb_chooseNum.css" class="ng-scope">
+    <!-- UEE新下拉框js -->
+	
+	
+    
+	    
+    
+    
+
+    
+    <!-- <uee:script src = "resource.root/bes/common/base/js/lib/RSA.js"></uee:script> -->
+    <!-- 前台加密需要引入 -->
+    
+    
+    
+    <uee:include src="$Gadget.$Path + '/bes-ad-authentication.html'" class="ng-scope"><style class="ng-scope">
+.changePayment_login .label {
+    width: 120px;
+}
+</style>
+<!-- 注:x-property是下拉框控件的属性，点击下拉框里的值时，它是变化的 -->
+<uee:fire init="" onbefore="$Controller.bes.ad.validbymsisdn.init($Gadget, $Inject('$Fire'))" class="ng-scope">
+</uee:fire>
+<uee:fire event="$bes.ad.queryofferinginfo" script="$Controller.bes.oc.productorder.queryofferinginfo($Page,$Gadget, $Fire, $UI, $index)" class="ng-scope"></uee:fire>
+<div class="changePayment_login ng-scope" style="width: 600px;color:gray; background-color: #ffffff;">
+	<div style="margin-bottom: 10px;margin-left: 10px;" ng-show="$Gadget.$Attrs.licenseemailauthflag=='true'" class="">
+
+
+		
+		
+		<!-- ngIf: $Gadget.Authcheckpersontab || ($Gadget.$Attrs.showauthcheck=='false') --><div class="form_control ng-scope" id="CollectDivId" ng-if="$Gadget.Authcheckpersontab || ($Gadget.$Attrs.showauthcheck=='false')">
+			<!-- 如果存在鉴权，则展示 并选中这个按钮-->                             
+			<div ng-init="$Gadget.authTypeKey = '0'" id="RecObjectddid">
+				<label class="radio" id="RecObjectLableId_0" style="margin-right: 0px" ng-class="{checked:$Gadget.Authcheckperson}" ng-click="authTypeKey = 0"> 
+				<ins id="RecObjectInsId_0" class="uIcon" ng-disabled="$Gadget.isSetGray" disabled="disabled">
+				<uee:fire script="$Controller.bes.ad.validbymsisdn.changeAuthType($Gadget,0)" class="ng-scope">
+                </uee:fire></ins>
+					<span class="label ng-binding" style="padding-left: 30px;" id="RecObjectItemId_0" ng-bind="$UEE.i18n('ad.authentication.label.validbymisisdn')">Válido por Suscriptor</span>
+				</label>
+			</div> <!-- radio end -->
+		</div><!-- end ngIf: $Gadget.Authcheckpersontab || ($Gadget.$Attrs.showauthcheck=='false') -->
+		
+		
+		
+		<!-- ngIf: $Gadget.AuthcheckTtab || ($Gadget.$Attrs.showauthcheck=='false') -->
+		
+		<!-- ngIf: $Gadget.Authcheckceropapeltab --><div class="form_control ng-scope" id="CollectDivId" ng-if="$Gadget.Authcheckceropapeltab">
+			<!-- 如果存在ceropapel，则展示，但不选中-->                             
+			<div id="RecObjectddid">
+				<label class="radio checked" id="RecObjectLableId_2" style="width: 191px;margin-right: 0px" ng-class="{checked:$Gadget.Authcheckceropapel}" ng-click="authTypeKey = 2"> 
+				<ins id="RecObjectInsId_2" class="uIcon"></ins>
+					<span class="label ng-binding" style="width: 150px" id="RecObjectItemId_0" ng-bind="$UEE.i18n('ad.authentication.label.authorizedbyceropapel')">Validado por Cero Papel</span>
+					<uee:fire script="$Controller.bes.ad.validbymsisdn.changeAuthType($Gadget,2)" class="ng-scope">
+                    </uee:fire>
+				</label>
+			</div> 
+		</div><!-- end ngIf: $Gadget.Authcheckceropapeltab -->
+	</div>
+
+	<!-- ngIf: $Gadget.Authcheckperson || $Gadget.$Attrs.licenseemailauthflag=='false' -->
+
+	<!-- ngIf: $Gadget.AuthcheckT && $Gadget.$Attrs.licenseemailauthflag=='true' -->
+
+	<!-- ngIf: $Gadget.Authcheckceropapel && $Gadget.$Attrs.licenseemailauthflag=='true' --><div class="form_control div-left ng-scope" id="ceroPapel" ng-if="$Gadget.Authcheckceropapel &amp;&amp; $Gadget.$Attrs.licenseemailauthflag=='true'" style="width: 736px">
+		<!-- missidn:row_1 -->
+		<div class="form_row form_con form_con_10">
+		    <div class="form_group per45">
+		        <div class="form_label ng-binding"><span class="font_red">*</span>Número de servicio:<!--MSISDN--></div>
+				<div class="form_control">
+					<input type="text" ng-model="$Gadget.ceropapel.msisdn" u-validator="digits;maxDigit(15);required" class="form_input ng-pristine ng-valid" id="msisdn" name="$Gadget_004.ceropapel.msisdn">
+				</div>	
+		    </div>
+			<div class="form_group per45">
+				<div class="form_control">
+				<span id="search" class="btn_normal_green ng-binding">Búsqueda</span>
+					<uee:fire validate="#msisdn" binder="#search " event="click" script="$Controller.bes.ad.validbymsisdn.searchIdtypeIdnumber($Gadget,$Fire);" class="ng-scope"></uee:fire>
+				</div>
+			</div>
+		</div>
+		<!-- IdType:row_2 -->
+		<div class="form_row form_con form_con_10">
+			<div class="form_group per45">
+				<div class="form_label">
+					<!-- ID Type: -->
+					<span ng-bind="'ad.person.label.idType'|i18n" class="ng-binding">Tipo de documento:</span>
+				</div>
+				<div class="form_control" id="certificateType">
+					<input class="form_input ng-pristine ng-valid" type="text" ng-model="$Gadget.idInformation.certificateType" u-validator="required" readonly="readonly" name="$Gadget_004.idInformation.certificateType" id="uee-001">
+				</div>
+			</div>
+			<div class="form_group per45">
+				<div class="form_label">
+					<!-- ID Number.: -->
+					<span ng-bind="'ad.person.label.idNumber'|i18n" class="ng-binding">Numero de identificación:</span>
+				</div>
+				<div class="form_control" id="certificateNo">
+					<input class="form_input ng-pristine ng-valid" type="text" ng-model="$Gadget.idInformation.certificateNo" u-validator="required" readonly="readonly" name="$Gadget_004.idInformation.certificateNo" id="uee-002">
+				</div>
+			</div>
+		</div>
+		<!-- 按钮 展示 -->
+		<!-- ngIf: $Gadget.Authcheckceropapel --><div style="margin-left: 120px;margin-top: 10px;" ng-if="$Gadget.Authcheckceropapel" class="ng-scope">
+			<span class="btn_normal_green ng-binding" id="loginbtn601312020"><!-- Valid By Cero Papel -->Validado por Cero Papel
+		 	 <uee:fire validate="#certificateType,#certificateNo" binder="#loginbtn601312020" onbefore="$Controller.bes.ad.validbymsisdn.ValidationPointOfSales($Gadget, $UI, $Page, $Inject('$Fire'))" class="ng-scope"></uee:fire>
+			</span>
+			<span class="btn_normal_green ng-binding" id="randomCeropapel"><!-- Check Result -->Resultado de la verificación
+      		<uee:fire event="click" onbefore="$Controller.bes.ad.validbymsisdn.beforeCeroPapel($Gadget,$UI)" bind="#randomCeropapel" onafter="$Controller.bes.ad.validbymsisdn.checkResult($Gadget, $UI, $Page, $Inject('$Fire'))" class="ng-scope"></uee:fire>              
+			
+			</span>
+			<!--除了字典配置项以外,增加skip能力控制 。默认不隐藏skip按钮 传Y表示隐藏 ,CeroPaple 校验时传入$Gadget.$Attrs.isskipshow =false -->
+			<!-- ngIf: $Gadget.isExist && $Page.hideskipbtn !='Y' && ($Gadget.$Attrs.isskipshow=='true') --><span ng-if="$Gadget.isExist &amp;&amp; $Page.hideskipbtn !='Y' &amp;&amp; ($Gadget.$Attrs.isskipshow=='true')" class="btn_normal_green ng-binding skiptothird ng-scope" id="loginbtn601312020"><!-- skip -->Omitir
+	
+			  <uee:fire onbefore="$Controller.bes.ad.validbymsisdn.skipToThird($Gadget, $UI, $Page, $Inject('$Fire'))" class="ng-scope"></uee:fire>
+			</span><!-- end ngIf: $Gadget.isExist && $Page.hideskipbtn !='Y' && ($Gadget.$Attrs.isskipshow=='true') -->
+			<span class="btn_normal_green ng-binding"><!-- cancel -->Cancelar
+			  <uee:fire script="$Controller.bes.ad.validbymsisdn.cancel($Gadget,$Fire)" class="ng-scope"></uee:fire>
+			</span>
+		</div><!-- end ngIf: $Gadget.Authcheckceropapel -->
+	</div><!-- end ngIf: $Gadget.Authcheckceropapel && $Gadget.$Attrs.licenseemailauthflag=='true' -->
+
+	<!-- ngIf: $Gadget.Authcheckperson||$Gadget.AuthcheckT || $Gadget.$Attrs.licenseemailauthflag=='false' -->
+</div>
+
+
+
+
+
+	
+	
+	
+	
+	
+	</uee:include>
+
+
+</div></div>
+
+<div class="bf_tips"><div class="head left"></div><div class="head right"></div><div class="head middle"></div><div class="mid"><div class="bf_tips_container"><div class="bf_tips_content"></div></div></div><div class="foot left"></div><div class="foot right"></div><div class="foot middle"></div></div><div class="fullcover" id="loadingcover"><img class="loading" src="resource.root/bes/ad/images/indicator_verybig.gif"></div></body></html>

@@ -1,0 +1,116 @@
+<html xmlns:ng="" xmlns:uee="" xmlns:ui="" xmlns:bes=""><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+		<title></title>
+	
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+		<!-- <link rel="shortcut icon" type="image/ico" href="resource.root/bes/sm/login/img/favicon_jsmobile.png" /> -->
+		<link rel="shortcut icon" type="image/ico" href="resource.root/bes/sm/login/img/workbenchIcon/logo_cz.png">
+		<!-- <link rel="shortcut icon" type="image/ico" href="/logo_cz.ico" /> -->
+		
+		<link rel="stylesheet" type="text/css" href="resource.root/bes/sm/login/css/base_ctz.css">
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/pages.css">
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/Radio.css">
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/Checkbox.css">
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/Droplist.css">
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/Charts.css">
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/ProcessBar.css">
+		
+		<link rel="stylesheet" href="resource.root/bes/sm/login/css/fast-entry.css">
+	
+		<script type="text/javascript" src="resource.root/themes/pc/app/app.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/Droplist.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/Checkbox.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/Radio.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/Pages.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/chart/getColor.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/chart/Cords.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/chart/CircleProcess.js"></script>
+		<script type="text/javascript" src="resource.root/bes/sm/login/js/ProcessBar.js"></script>
+	</head>
+
+	<body novalidate="novalidate">
+    	<uee:include src="'pages/Framework_ctz.html'"></uee:include>
+    	
+    	<uee:fire init="" script="initTitle(this)" class="ng-scope">
+			<script>
+			function initTitle($Scope) {
+				//var title = window.$UEE.i18n('SM.LOGIN.TITLE.PORTAL_TITLE');
+				//$(document).attr("title", title);
+				
+				var $Model = $Scope.$Model;
+				
+				// ��ʱ�ȶ�u-token
+				$Model.check_CurrentUToken = getCookie('u-token');
+				
+				$Model.intervalId = setInterval("isSameUToken()", 5000);
+			}
+			
+			function getCookie(name) {
+				var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+				if (arr = document.cookie.match(reg))
+					return unescape(arr[2]);
+				else
+					return null;
+			}
+			
+			function isSameUToken(){
+				var $Scope = $(document).scope();
+				var $Model = $Scope.$Model;
+				var check_LatestUToken = getCookie('u-token');
+				if (check_LatestUToken != undefined && check_LatestUToken != $Model.check_CurrentUToken){
+					var $Fire = $Scope.$Get('$Fire');
+					var i18n = $UEE.i18n;
+					
+					//cookie��utoken����������ʱ��
+					clearInterval($Model.intervalId);
+					
+					$Fire({
+						'service' : '/SMLoginAction/getloginid',
+						target : "$Model.check_LatestLoginId"
+					}, $Scope).onafter(function(){
+						var check_CurrentLoginId = $Model.userInfo.loginId;
+						var check_LatestLoginId = $Model.check_LatestLoginId;
+						
+						var title = "";
+						var info = "";
+						
+						//�����½�˺ű�����򵯳���ʾ�˺ű����ʾ��Ϣ����ȷ��ˢ��ҳ�棬�ر���ʾ�����ö�ʱ��
+						if (check_CurrentLoginId != check_LatestLoginId){
+							
+							title = i18n('SM.PORTAL.TITLE.RELOGIN');
+							info = i18n('SM.PORTAL.TIPS.RELOGIN').replace("{oldLoginId}", check_CurrentLoginId).replace("{newLoginId}", check_LatestLoginId);
+							/*$(document).scope().$UI.msgbox.info(title, info, function(){
+								window.location.reload();
+							 });
+							 */
+							$(document).scope().$UI.msgbox.info(title, info, reloadPage, null, resetInterval);
+						}
+						else{
+							//�˺�û�б����ֱ���滻��ǰtoken����ֹ��ͣ������
+							$Model.check_CurrentUToken = check_LatestUToken;
+							resetInterval();
+						}
+						
+					}).onerror(function(){
+						var errTitle = $UEE.i18n('SM.PORTAL.TITLE.RELOGIN');
+						var errMsg = $UEE.i18n('SM.PORTAL.MSG.CHECK_DOMAIN_FAILED');
+						$(document).scope().$UI.msgbox.info(errTitle, errMsg, reloadPage, reloadPage, reloadPage);
+						return false;
+					});
+				}
+			}
+
+			function resetInterval(){
+				$Model.intervalId = setInterval("isSameUToken()", 5000);
+			}
+
+			function reloadPage(){
+				window.location.reload();
+			}
+
+			</script>
+		</uee:fire>
+	
+
+<div class="bf_tips"><div class="head left"></div><div class="head right"></div><div class="head middle"></div><div class="mid"><div class="bf_tips_container"><div class="bf_tips_content"></div></div></div><div class="foot left"></div><div class="foot right"></div><div class="foot middle"></div></div></body></html>

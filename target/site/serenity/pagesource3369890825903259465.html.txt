@@ -1,0 +1,281 @@
+<html xmlns:ng="" xmlns:uee="" xmlns:ui="" xmlns:bes=""><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="resource.root/themes/pc/app/app.css" type="text/css" rel="stylesheet">
+    <link href="resource.root/bes/ad/ctz/themes/default/css/base.css" type="text/css" rel="stylesheet">
+    	<link rel="stylesheet" type="text/css" href="resource.root/bes/ad/css/base.css">
+	    <link rel="stylesheet" href="resource.root/bes/ad/ctz/css/components.css">	    
+        <link href="resource.root/bes/ad/css/checkoutFinish.css" type="text/css" rel="stylesheet">
+    	<link rel="stylesheet" href="resource.root/bes/ad/css/bme.datetimepicker.css">
+        <link rel="stylesheet" href="resource.root/bes/ad/css/bme.shadow.css">
+
+        <script src="resource.app/app.js" type="text/javascript"></script>
+        <script type="text/javascript" src="resource.root/bes/ad/js/ui.datetimepicker.bmefix.js"></script>
+        <script type="text/javascript" src="resource.root/bes/ad/js/jquery.ui.i18n.all.bmefix.js"></script>
+        <script src="resource.root/bes/ad/js/jbme.poper.js" type="text/javascript"></script>
+	    <script src="resource.root/bes/ad/js/base.js" type="text/javascript"></script>
+	    <script src="resource.root/bes/ad/js/Dialog.js" type="text/javascript"></script>
+	    <script src="resource.root/bes/ad/js/Droplist.js"></script>
+	    <script src="resource.root/bes/ad/js/Checkbox.js"></script>
+	    <script src="resource.root/bes/ad/js/Radio.js"></script>
+	    <script src="resource.root/bes/ad/js/Pages.js"></script>
+	    <script src="resource.root/bes/ad/js/ad-util.js"></script>
+	    <script src="resource.root/bes/ad/js/DefaultScroll.js" type="text/javascript"></script>
+	    <script src="resource.root/bes/ad/js/Date.js" type="text/javascript"></script>
+	    <script src="resource.root/bes/ad/js/common-group.js" type="text/javascript"></script>
+	    <script src="resource.root/bes/ad/js/callchain.js"></script>
+        <script src="resource.root/bes/ad/js/cspCommon.js" type="text/javascript"></script>
+		
+        <!-- UEE新下拉框js -->
+	    <script src="resource.root/bes/ad/js/oc-droplist.js"></script>
+	    <script src="resource.root/bes/ad/js/oc-directive.js"></script>
+    
+    <!-- 停复机 -->
+	<title ng-bind="'ad.marketplan.title.salegoods'|i18n" class="ng-binding">venta de bienes</title>
+  <script type="text/javascript" src="resource.root/bes/ad/js/BuriedPointStatistics.js"></script><script type="text/javascript"></script></head>
+  <body novalidate="novalidate">
+    <business name="salegoods" start-step="salegoods">
+        <step name="salegoods" view="../usl/salegoods.uslx"></step>
+    </business>
+    <div class="uee-page" rendertime="render me cost 30ms"><uee:fire init="" script="$Controller.bes.ad.salegoods.init($Page, $Get('$Fire'),this);" class="ng-scope"></uee:fire>
+<!-- ngIf: $Page.saleContinue --><div id="salegoods" ng-if="$Page.saleContinue" class="ng-scope">
+	<div class="uee-gadget ng-scope bes-ad-salegoods" gadget="" name="bes-ad-salegoods"><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-ad-salegoods/bes-ad-salegoods.js--><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-ad-salegoods/bes-ad-questionverification.js--><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-ad-staticshoppingcar/bes-ad-staticshoppingcar.js-->
+    
+    
+    <uee:include src="$Path + '/bes-ad-salegoods.html'" class="ng-scope"><link rel="stylesheet" ng-href="/oc/bes/ad/ctz/gadget/bes-ad-salegoods/bes-ad-salegoods.css" class="ng-scope" href="/oc/bes/ad/ctz/gadget/bes-ad-salegoods/bes-ad-salegoods.css">
+<link href="resource.root/bes/ad/ctz/themes/default/css/base.css" type="text/css" rel="stylesheet" class="ng-scope">
+<!-- 增加前置业务和权限校验 -->
+<uee:fire init="" script="$Controller.bes.ad.salegoods.validPowerAndBusiRuleEvent($Gadget, $Fire, $Page, $UI)" class="ng-scope"></uee:fire>
+<uee:fire init="" script="$Controller.bes.ad.questionverification.queryCustInfoByServiceNum($Gadget, $Page, $Fire, $UI)" class="ng-scope"></uee:fire>
+<!-- 初始化页面 -->
+<uee:fire init="$Gadget.checkPowerAndRule" script="$Controller.bes.ad.salegoods.init($Gadget, $Fire, $Page, $UI)" class="ng-scope"></uee:fire>
+<!-- 初始化地址 -->
+<uee:fire init="$Gadget.checkPowerAndRule" script="$Controller.bes.ad.salegoods.DeliverInit($Gadget, $Path,$Inject('$Fire'),$Model)" class="ng-scope"></uee:fire>
+<!-- 问卷 -->
+<uee:fire event="$bes.ad.multiplechoicequestions" script="$Controller.bes.ad.questionverification.verifyMultipleChoiceQuestions($Page,$Gadget,$Fire,$UI,$Event.$Data);" class="ng-scope"></uee:fire>
+<!-- 停止短信发送的秒数递减 -->
+<uee:fire event="$breakRandomNum4SendSMS" script="$Controller.bes.ad.salegoods.breakRandomNumber($Gadget);" class="ng-scope"></uee:fire>
+<style class="ng-scope">
+ .quantity_input {
+  width: 30%;  
+  height: 3px;
+  line-height: 14px;
+  padding: 12px 0px;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #333333;
+  background: #ffffff;
+  position: relative;
+  text-align: center;
+}   
+</style>
+<!-- HTML -->
+<div class="main_inner sale_goods ng-scope" ng-show="$Gadget.checkPowerAndRule">
+    <!-- 1. 选择资源、商品地址区域 -->
+    <div class="panel" readonly="readonly">
+        <div class="pl_title">
+            <span ng-bind="'ad.person.rewardactivity.label.selectResource'|i18n" class="ng-binding">Seleccionar Recurso</span></div>
+        <div class="pl_content form_row form_con">
+        	<!-- 选择销售原因： -->
+            <div class="form_group per100">
+                <label class="form_label">
+                    <span class="font_red">*</span>
+                    <span ng-bind="'ad.person.rewardactivity.label.reasonForSale'|i18n" class="ng-binding">Razón de venta:</span>
+                </label>
+                <div class="form_control">
+                    <div class="form_droplist" oc-select-input="" x-property="$Gadget.reasonChoosed" x-items="$Gadget.datalist['PRO_GOODS_SALE_REASON']" id="oc_select1657204185810">
+                        <div class="Droplist blueBorder">
+                            
+                        <div class="DroplistHeader">
+                                <input type="text" id="selectReasonForSale" class="inputbox uee-dirty-invalid valid" u-validator="required" key="OtherResourceSales" ueevstatus="success" ueevmsg="" ueevpremsg="">
+                            <span class="trigger" id="ocTriggeroc_select1657204185810udrop00001"></span></div></div>
+                        <uee:fire event="change" script="$Controller.bes.ad.salegoods.selectReason($Gadget, $Fire, $UI)" class="ng-scope"></uee:fire>
+                    </div>
+                </div>
+            </div>
+            <div class="form_group per50">
+                <!-- 选择资源 ： -->
+                <label class="form_label">
+                	<span ng-bind="'ad.person.rewardactivity.label.selectResource'|i18n" class="ng-binding">Seleccionar Recurso</span>
+                	<span ng-bind="'ad.person.label.Colon'|i18n" class="ng-binding">:</span>
+                </label>
+                <div class="form_control">
+                    <div class="btn_normal_green">
+                        <span ng-bind="'ad.person.rewardactivity.label.addResource'|i18n" class="ng-binding">Añadir recurso</span>
+                        <uee:fire validate="#selectReasonForSale" script="$Controller.bes.ad.salegoods.addResource($Gadget, $Fire, $UI, $Model)" class="ng-scope"></uee:fire>
+                    </div>
+                </div>
+            </div>
+            <!-- lot value -->
+            <div class="form_group per50">
+                <label class="form_label">
+                	<span class="font_red">*</span>
+                    <span ng-bind="$UEE.i18n('ad.person.rewardactivity.title.lotvalue') + $UEE.i18n('ad.group.label.colon')" class="ng-binding">Tipo de lote:</span>
+                </label>
+                <div class="form_control">
+                    <div class="form_droplist" oc-select-input="" x-property="$Gadget.lotValueChoosed" x-items="$Gadget.datalist.PRO_GOODS_SALE_LOTE" id="oc_select1657204185810">
+                        <div class="Droplist blueBorder">
+                            
+                        <div class="DroplistHeader">
+                                <input type="text" class="inputbox uee-invalid uee-dirty-invalid" id="selectLotValueForSale" u-validator="required" key="" ueevstatus="fail" ueevmsg="Este campo es obligatorio">
+                            <span class="trigger" id="ocTriggeroc_select1657204185810udrop00002"></span></div></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 选择省份： US-20181109172910-2031121080 BR L158 选择资源界面定制（营销部分）增加Call Center的标志-->
+            <!-- ngIf: $Gadget.callCenterFlag -->
+            <!-- 证件地市： US-20181109172910-2031121080 BR L158 选择资源界面定制（营销部分）增加Call Center的标志-->
+            <!-- ngIf: $Gadget.callCenterFlag -->
+            <!-- 选择社区： US-20181109172910-2031121080 BR L158 选择资源界面定制（营销部分）增加Call Center的标志-->
+            <!-- ngIf: $Gadget.callCenterFlag -->
+            
+            
+         
+            <!-- 合同编号： -->
+            <div class="form_group per50">
+                <label class="form_label">
+                    <!-- ngIf: $Gadget.reasonChoosed == 'Insurance_Damage'|| $Gadget.reasonChoosed == 'Insurance_Stolen' -->
+                    <span ng-bind="'ad.person.rewardactivity.tips.ClaimID'|i18n" class="ng-binding">ID de reclamo</span><span ng-bind="'ad.person.label.Colon'|i18n" class="ng-binding">:</span>
+                </label>
+                <div class="form_control">
+                    <input id="claimIDForSale" class="form_input" type="text" property="$Gadget.claimID" u-validator="required" ng-disabled="$Gadget.reasonChoosed != 'Insurance_Damage' &amp;&amp; $Gadget.reasonChoosed != 'Insurance_Stolen'" name="$Gadget_007.claimID" disabled="disabled">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- 2. 校验库存区域 -->
+    <div class="panel">
+        <div class="pl_title ng-binding" ng-bind="'ad.person.rewardactivity.label.resourceSelected'|i18n">Lista de recursos</div>
+        <div class="pl_content form_row form_con">
+            <div class="form_group per100 fr_last">
+            	 <div class="pl_content">
+            	 	<!-- ngRepeat: $Item in $Gadget.prodInfoList -->
+            	 </div>
+                
+            </div>
+            <!--设备类型 DeviceType-->
+	        <div class="form_group per100 fr_last">
+	        	<div class="pl_content">
+					<div class="form_control mr_10">
+						<span class="font_red">*</span>
+						<span ng-bind="'ad.person.label.DeviceType'|i18n" class="ng-binding">Tipo de dispositivo:</span>
+							<!-- ngRepeat: $itemj in $Gadget.deviceTypeList --><span class="radio ng-scope" ng-class="{checked: $Gadget.choosedDeviceType == $itemj.itemCode}" ng-repeat="$itemj in $Gadget.deviceTypeList" ng-click="$Gadget.choosedDeviceType = $itemj.itemCode">
+								<ins class="uIcon"></ins>
+								<span class="label ng-binding" ng-bind="$itemj.itemName">Contado</span>
+						</span><!-- end ngRepeat: $itemj in $Gadget.deviceTypeList --><span class="radio ng-scope" ng-class="{checked: $Gadget.choosedDeviceType == $itemj.itemCode}" ng-repeat="$itemj in $Gadget.deviceTypeList" ng-click="$Gadget.choosedDeviceType = $itemj.itemCode">
+								<ins class="uIcon"></ins>
+								<span class="label ng-binding" ng-bind="$itemj.itemName">A Cuotas</span>
+						</span><!-- end ngRepeat: $itemj in $Gadget.deviceTypeList --><span class="radio ng-scope" ng-class="{checked: $Gadget.choosedDeviceType == $itemj.itemCode}" ng-repeat="$itemj in $Gadget.deviceTypeList" ng-click="$Gadget.choosedDeviceType = $itemj.itemCode">
+								<ins class="uIcon"></ins>
+								<span class="label ng-binding" ng-bind="$itemj.itemName">Movistar Money</span>
+						</span><!-- end ngRepeat: $itemj in $Gadget.deviceTypeList -->
+						<!-- ngIf: !$Page.hasMovistarMoneyAuth && $Gadget.movistarMoneyflag -->
+					</div>
+				</div>
+	        </div>
+            <div class="form_group per11 fr_last text_left">
+                <div class="btn_normal_green" style="margin-top:10px;">
+                    <span ng-bind="'ad.person.rewardactivity.tips.PCOValidation'|i18n" class="ng-binding">Validación con PCO</span>
+                    <uee:fire script="$Controller.bes.ad.questionverification.checkSalePCO($Gadget, $Page, $Fire, $UI)" class="ng-scope"></uee:fire>
+                </div>
+            </div>
+            <div class="form_group per14 fr_last text_left ng-hide" ng-show="$Page.subsInfo.paymentType == '1'">
+                <div class="btn_normal disabled" ng-class="{disabled:(!$Gadget.validationPCO || !$Gadget.isInstallment),btn_normal_green:($Gadget.validationPCO &amp;&amp; $Gadget.isInstallment)}" style="margin-top:10px;">
+                    <span ng-bind="'ad.person.rewardactivity.tips.FirstPaymentCheck'|i18n" class="ng-binding">Establecer plan de cuotas</span>
+                    <uee:fire script="$Controller.bes.ad.salegoods.firstPaymentCheck($Gadget, $Fire, $UI)" class="ng-scope"></uee:fire>
+                </div>
+            </div>
+            <!-- ngIf: !$Gadget.callCenterFlag --><div class="form_group per14 fr_last text_left ng-scope" ng-if="!$Gadget.callCenterFlag">
+                <div class="btn_normal disabled" ng-class="{disabled:!$Gadget.validationPCO,btn_normal_green:$Gadget.validationPCO}" style="margin-top:10px;">
+                    <span ng-bind="'ad.person.rewardactivity.label.checkAvailability'|i18n" class="ng-binding">Consultar disponibilidad</span>
+                    <uee:fire validate="#selectLotValueForSale" script="$Controller.bes.ad.salegoods.searchWareHouseInfo($Gadget, $Fire, $UI)" class="ng-scope"></uee:fire>
+                </div>
+            </div><!-- end ngIf: !$Gadget.callCenterFlag -->
+            <!-- ngIf: $Gadget.callCenterFlag -->
+        </div>
+    </div>
+    <!-- 3. 首付款区域 -->
+    <div class="panel ng-hide" ng-show="$Gadget.firstPaymentCheck &amp;&amp; $Gadget.isInstallment">
+        <div class="pl_title ng-binding" ng-bind="'ad.person.rewardactivity.tips.FirstPaymentforInstallment'|i18n">Primer pago para la instalación</div>
+        <div class="pl_content">
+            <table class="grid" ng-init="$Gadget.selectedDeliveryInfo=-1">
+                <tbody><tr class="grid_header">
+                    <th style="width:15%;" ng-bind="'ad.person.rewardactivity.tips.SKUCode'|i18n" class="ng-binding">Código SKU</th>
+                    <th style="width:15%;" ng-bind="'ad.person.rewardactivity.tips.SKUName'|i18n" class="ng-binding">Nombre SKU</th>
+                    <th style="width:8%;" ng-bind="'ad.person.rewardactivity.tips.InstallmentPeriod'|i18n" class="ng-binding">Cuotas</th>
+                    <th style="width:8%;" ng-bind="'ad.person.rewardactivity.tips.DeviceCost'|i18n" class="ng-binding">Costo del equipo</th>
+                    <th style="width:8%;" ng-bind="'ad.person.rewardactivity.tips.TaxofDeviceCost'|i18n" class="ng-binding">Impuesto sobre el costo del dispositivo</th>
+      			    <th style="width:8%;" ng-bind="'ad.person.rewardactivity.tips.TaxWithDeviceCost'|i18n" class="ng-binding">Impuesto con costo del dispositivo</th>
+                    <th style="width:10%;" ng-bind="'ad.person.rewardactivity.tips.FirstPaymentAmount'|i18n" class="ng-binding">Monto a pagar inicial</th>
+                    <th style="width:8%;" ng-bind="'ad.person.title.firstPaymentAmountwithTax'|i18n" class="ng-binding">Monto primer pago + Impuesto</th>
+                    <th style="width:8%;" ng-bind="'ad.person.rewardactivity.tips.Installment/Month'|i18n" class="ng-binding">Valor de la cuota</th>
+                    <th style="width:6%;" ng-bind="'ad.person.rewardactivity.label.Operation'|i18n" class="ng-binding">Operación</th>
+                </tr>
+                <tr class="grid_content" ng-show="!$Gadget.offerinstallment || $Gadget.offerinstallment.length == 0">
+                    <td class="text_center font_gray ng-binding" colspan="8" ng-bind="'ad.person.title.NoData'|i18n">Sin datos.</td>
+                </tr>
+                <!--  -->
+                <!-- ngRepeat: $item in $Gadget.offerinstallment -->
+            </tbody></table>
+        </div>
+    </div>
+    <!-- 3. 商品列表区域 -->
+    <div class="panel">
+	    <div class="pl_title ng-binding" ng-bind="'ad.person.rewardactivity.tips.ResourceAvailabilityList'|i18n">Lista de recursos disponibles</div>
+        <div class="pl_content">
+            <table class="grid" ng-init="$Gadget.selectedDeliveryInfo=-1">
+                <tbody><tr class="grid_header grid_header_gray">
+                    <!-- 仓库 -->
+                    <th ng-bind="'ad.person.rewardactivity.label.wareHouse'|i18n" class="ng-binding">Bodega</th>
+					<!--仓库名称-->
+					<th ng-bind="'ad.person.title.wareHouseName'|i18n" class="ng-binding">Nombre de bodega</th>
+                    <!-- 资源 -->
+                    <th width="350" ng-bind="'ad.person.rewardactivity.label.resource'|i18n" class="ng-binding">Recurso</th>
+                    <!-- 数量 -->
+                    <th ng-bind="'ad.person.rewardactivity.label.quantity'|i18n" class="ng-binding">Disponible</th>
+                    <!--订购数量,只有sme sim让输入-->
+					<th ng-bind="'ad.person.rewardactivity.label.Purchasequantity'|i18n" class="ng-binding">Cantidad de compra</th>
+                    <!-- 投递方式 -->
+                    <th ng-bind="'ad.person.rewardactivity.label.deliveryMethod'|i18n" class="ng-binding">Método de entrega</th>
+                    <!-- 选择 -->
+					<th style="width:6%;" ng-bind="'ad.person.rewardactivity.label.Operation'|i18n" class="ng-binding">Operación</th>
+                    
+                </tr>
+                <tr class="grid_content" ng-show="!$Gadget.waitForData &amp;&amp; !$Gadget.warehouseInfoListShow">
+                    <td class="text_center font_gray ng-binding" colspan="6" ng-bind="'ad.person.title.NoData'|i18n">Sin datos.</td>
+                </tr>
+                <!--  -->
+                <!-- ngRepeat: $item in $Gadget.warehouseInfoListShow -->
+            </tbody></table>
+        </div>
+    </div>
+    <!-- Authorized Contact Info -->
+    <!-- ngIf: $Page.nextStepEnable && $Gadget.showDeliverInfo -->
+    <!-- 4. 配送地址区域 -->
+    <!-- ngIf: $Gadget.showDeliverInfo -->
+    <!-- 5. 提交区域 -->
+    <div class="text_right">
+           <!-- ngIf: $Gadget.isMobileUser && $Gadget.showDeliverInfo -->
+          <div class="btn_negative">
+              <span ng-bind="'ad.person.rewardactivity.button.Cancel'|i18n" class="ng-binding">Atrás</span>
+              <uee:fire script="$Controller.bes.ad.salegoods.cancleInfo($Gadget, $Path, $Fire, $Model, $Context)" class="ng-scope"></uee:fire>
+          </div>
+          <div class="btn_positive">
+              <span ng-bind="'ad.person.rewardactivity.button.next'|i18n" class="ng-binding">Siguiente</span>
+              <uee:fire validate=".sale_goods" script="$Controller.bes.ad.salegoods.addToCar($Gadget, this, $UI, $Model)" class="ng-scope"></uee:fire>
+          </div>
+       </div>
+  </div>
+  <!-- ngIf: $Gadget.showQuestions -->
+  <!-- 结算页面 -->
+<!-- ueeIf: undefined -->
+</uee:include>
+    
+</div>
+</div><!-- end ngIf: $Page.saleContinue -->
+
+</div>
+  
+<div class="DroplistOption" data-uuid="udrop00001" style="left: 234.332px; top: 91.0028px; width: 258px; display: none;"><ul><li class="dropItem" title="Campaña - Migración" id="agentdesktopudrop00001Cam_Migration" key="Cam_Migration"><span>Campaña - Migración</span></li><li class="dropItem" title="Campañas - Plan empleado" id="agentdesktopudrop00001Cam_TelfEmploy" key="Cam_TelfEmploy"><span>Campañas - Plan empleado</span></li><li class="dropItem" title="Campañas - Ventas en tienda" id="agentdesktopudrop00001Cam_WarehouseSales" key="Cam_WarehouseSales"><span>Campañas - Ventas en tienda</span></li><li class="dropItem" title="Corrección de recursos" id="agentdesktopudrop00001Resource_Fix" key="Resource_Fix"><span>Corrección de recursos</span></li><li class="dropItem selected" title="Otros" id="agentdesktopudrop00001OtherResourceSales" key="OtherResourceSales"><span>Otros</span></li><li class="dropItem" title="Recursos de campaña" id="agentdesktopudrop00001Campaign_Resources_Fix" key="Campaign_Resources_Fix"><span>Recursos de campaña</span></li><li class="dropItem" title="Reno/Repo" id="agentdesktopudrop00001RR_SaleReason" key="RR_SaleReason"><span>Reno/Repo</span></li><li class="dropItem" title="Seguro por daños" id="agentdesktopudrop00001Insurance_Damage" key="Insurance_Damage"><span>Seguro por daños</span></li><li class="dropItem" title="Seguro por robo" id="agentdesktopudrop00001Insurance_Stolen" key="Insurance_Stolen"><span>Seguro por robo</span></li><li class="dropItem" title="Venta a cuotas" id="agentdesktopudrop00001Installment" key="Installment"><span>Venta a cuotas</span></li><li class="dropItem" title="Venta de recursos por página WEB" id="agentdesktopudrop00001WebResourceSales" key="WebResourceSales"><span>Venta de recursos por página WEB</span></li></ul></div><div class="bf_tips bmeFixSelectorBug" style="width: 161px; z-index: 9999; top: 46.9943px; left: 1052.27px; display: none;"><div class="head left"></div><div class="head right"></div><div class="head middle"></div><div class="mid"><div class="bf_tips_container"><div class="bf_tips_content"><p class="bf_tips_error">Este campo es obligatorio</p></div></div></div><div class="foot left"></div><div class="foot right"></div><div class="foot middle"></div></div><div class="DroplistOption" data-uuid="udrop00002" style="left: 1032.27px; top: 134.994px; width: 258px; display: none;"><ul><li class="dropItem" title="Nuevo" id="agentdesktopudrop00002NUEVO" key="NUEVO"><span>Nuevo</span></li></ul></div></body></html>
