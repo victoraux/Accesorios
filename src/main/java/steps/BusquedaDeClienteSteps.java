@@ -32,7 +32,6 @@ public class BusquedaDeClienteSteps {
 
         esperaImplicita.esperaExplicita(10);
         busquedaDeClientePageObjectPOM.getDriver().switchTo().parentFrame();
-
         busquedaDeClientePageObjectPOM.getDriver().switchTo().frame(5);
         esperaImplicita.esperaExplicita(10);
         clickElemento(busquedaDeClientePageObjectPOM.getBtnSuscripciones());
@@ -50,8 +49,7 @@ public class BusquedaDeClienteSteps {
 
         esperaImplicita.esperaExplicita(10);
         busquedaDeClientePageObjectPOM.getDriver().switchTo().parentFrame();
-
-        busquedaDeClientePageObjectPOM.getDriver().switchTo().frame(5);
+        busquedaDeClientePageObjectPOM.getDriver().switchTo().frame(6);
         esperaImplicita.esperaExplicita(10);
         clickElementos(busquedaDeClientePageObjectPOM.getBtnOmitir());
 
@@ -61,4 +59,28 @@ public class BusquedaDeClienteSteps {
     public void clickElementos(By elemento) {
         busquedaDeClientePageObjectPOM.getDriver().findElement(elemento).click();
     }
-}
+
+
+    @Step
+    public void clickSiguiente() throws AWTException, InterruptedException {
+
+
+        esperaImplicita.esperaExplicita(15);
+        busquedaDeClientePageObjectPOM.getDriver().switchTo().parentFrame();
+        busquedaDeClientePageObjectPOM.getDriver().switchTo().frame(6);
+        esperaImplicita.esperaExplicita(15);
+        clickElementoSiguiente(busquedaDeClientePageObjectPOM.getBtnSiguiente());
+
+
+    }
+
+    @Step
+    public void clickElementoSiguiente(By elemento) {
+        busquedaDeClientePageObjectPOM.getDriver().findElement(elemento).click();
+    }
+
+
+    }
+
+
+

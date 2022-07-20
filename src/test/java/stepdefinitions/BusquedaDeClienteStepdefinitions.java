@@ -17,7 +17,7 @@ public class BusquedaDeClienteStepdefinitions {
 
     Datos datos = new Datos();
 
-    String [] datosIdentificacion = datos.getBusquedaCliente();
+    String[] datosIdentificacion = datos.getBusquedaCliente();
 
     @Steps
     BusquedaDeClienteSteps busquedaDeClienteSteps;
@@ -27,8 +27,6 @@ public class BusquedaDeClienteStepdefinitions {
 
         busquedaDeClienteSteps.clickSeleccionar();
         busquedaDeClientePageObject.getDriver().findElement(busquedaDeClientePageObject.getBtnSeleccionarCedula()).click();
-
-
 
 
     }
@@ -42,8 +40,9 @@ public class BusquedaDeClienteStepdefinitions {
         busquedaDeClienteSteps.clickSuscripcion();
         busquedaDeClientePageObject.getDriver().findElement(busquedaDeClientePageObject.getBtnTramites()).click();
         busquedaDeClientePageObject.getDriver().findElement(busquedaDeClientePageObject.getBtnVentaDeRecurso()).click();
-      //  busquedaDeClientePageObject.getDriver().findElement(busquedaDeClientePageObject.getBtnOmitir()).click();
         busquedaDeClienteSteps.clickOmitir();
-    }
+        busquedaDeClienteSteps.clickSiguiente();
 
+
+    }
 }

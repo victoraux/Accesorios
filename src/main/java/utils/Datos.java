@@ -6,6 +6,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
 import java.io.FileInputStream;
 public class Datos {
+
+
+
     public String[] getDatos() {
         String excel = "Datos.xlsx";
         String usuario = null;
@@ -54,4 +57,25 @@ public class Datos {
 
 
     }
-}
+
+    public String[] getCriterioBusqueda() {
+        String excel = "Datos.xlsx";
+        String identificacion = null;
+
+        try {
+            FileInputStream file = new FileInputStream(new File(excel));
+            XSSFWorkbook libro = new XSSFWorkbook(file);
+            XSSFSheet hoja = libro.getSheet("CriterioBusqueda");
+            Row row;
+            Cell cell;
+            row = hoja.getRow(1);
+            cell = row.getCell(0);
+            identificacion = cell.toString();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        String datosIdentificacion[] = {identificacion};
+        return datosIdentificacion;
+
+}}

@@ -26,6 +26,12 @@ public class BusquedaDeClientePageObject extends PageObject {
 
     By btnOmitir = By.xpath("//span[contains(text(),'Omitir')]");
 
+    By btnSiguiente = By.xpath("//span[contains(text(),'Siguiente')]");
+
+
+
+
+
 
     public By getiFrameMenuClientes() {
         return iFrameMenuClientes;
@@ -59,6 +65,10 @@ public class BusquedaDeClientePageObject extends PageObject {
         return btnVentaDeRecurso;
     }
 
-    public By getBtnOmitir() {return btnOmitir;
-    }
+    public By getBtnOmitir() {return btnOmitir;}
+
+    public By getBtnSiguiente() {return btnSiguiente;}
+
+
 }
+

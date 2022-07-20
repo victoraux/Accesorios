@@ -1,0 +1,1250 @@
+<html xmlns:ng="" xmlns:uee="" xmlns:ui="" xmlns:bes=""><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="resource.root/themes/pc/app/app.css" type="text/css" rel="stylesheet">
+    <!-- 引入新base, 暂未发现对样式有影响-->
+    <link href="../../ad/css/base.css" type="text/css" rel="stylesheet">
+    <link href="resource.root/bes/ad/css/components.css" type="text/css" rel="stylesheet">
+    <link href="resource.root/bes/ordercapture/css/personal.css" type="text/css" rel="stylesheet">
+	    <link href="resource.root/bes/ordercapture/css/components.css" type="text/css" rel="stylesheet">
+	    
+    <!--     <link href="../css/base.css" type="text/css" rel="stylesheet" /> -->
+    <link href="resource.root/bes/ordercapture/css/style.css" type="text/css" rel="stylesheet">
+    <link href="resource.root/bes/ordercapture/css/extend.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../ad/css/currentOrder.css">
+    <link rel="stylesheet" type="text/css" href="../../ad/css/productorder-additional.css">
+    <link rel="stylesheet" href="resource.root/bes/ad/css/Droplist.css">
+    <link rel="stylesheet" href="resource.root/bes/ad/css/bme.datetimepicker.css">
+    <link rel="stylesheet" href="resource.root/bes/ad/css/bme.shadow.css">
+    
+    <!-- ngIf: $Page.contextInfo.locale == 'ar_EG' -->
+    
+    <script src="resource.app/app.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource.root/bes/ad/js/ui.datetimepicker.bmefix.js"></script>
+    <script type="text/javascript" src="resource.root/bes/ad/js/jquery.ui.i18n.all.bmefix.js"></script>
+    <script src="resource.root/bes/ad/js/jbme.poper.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/base.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/Checkbox.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/ProcessBar.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/Dialog.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/Date.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/Radio.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/Droplist.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/Pages.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/tipsCommon.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/ad-util.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/Rangeh.js"></script>
+    <script src="resource.root/bes/ad/js/ProcessBar.js" type="text/javascript"></script>
+    <!-- <script src="resource.root/bes/ad/js/validator.js" type="text/javascript"></script> -->
+    <script src="resource.root/bes/ad/js/validator.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/DefaultScroll.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/common-group.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/business/family.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/callchain.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource.root/bes/sm/login/js/bes.portal.tabpanel.client.js"></script>
+    <script type="text/javascript" src="resource.root/bes/sm/login/js/tabset.js"></script>
+    <!-- UEE新下拉框js -->
+    <script src="resource.root/bes/ad/js/oc-droplist.js"></script>
+    <script src="resource.root/bes/ad/js/oc-directive.js"></script>
+    <!-- RSA加密需要的js -->
+    <script type="text/javascript" src="resource.root/bes/common/base/js/lib/RSA.js"></script>
+    <script type="text/javascript" src="resource.root/bes/common/base/js/algorithm/encrypt.js"></script>
+    <script src="resource.root/bes/ad/js/titleTips.js" type="text/javascript"></script>
+    <script src="resource.root/bes/ad/js/cspCommon.js" type="text/javascript"></script>
+    <!-- 商品订购 -->
+    <script>
+    document.title = $UEE.i18n("ad.person.title.OfferingSubscriber");
+    </script><title>Suscripción de la Oferta</title>
+<script type="text/javascript" src="resource.root/bes/ad/js/BuriedPointStatistics.js"></script><script type="text/javascript"></script></head>
+
+<body novalidate="novalidate">
+    <business name="business" start-step="index">
+        <step name="index" view="resource.root/bes/ordercapture/usl/productorder.uslx"></step>
+        <step name="displayofferingdetail" view="resource.root/bes/ordercapture/usl/bes-ad-goofferingdetail.uslx"></step>
+        <step name="promotionsetting" view="resource.root/bes/ad/usl/bes-ad-promotionsetting.uslx"></step>
+        <step name="personalsale" view="resource.root/bes/ad/usl/bes-ad-mp-personalsale.uslx"></step>
+        <step name="checkout" view="resource.root/bes/ad/usl/bes-ad-checkout-new.uslx"></step>
+    </business>
+    <div class="uee-page" rendertime="render me cost 30ms">
+
+<!-- add begin wwx230437 2015-09-17 V800R001C30TB100 DTS2015091402454 商品推荐页面不可用-->
+<div class="uee-gadget ng-scope bes-ad-recommendoffernew bes-ad-recommendoffer" id="recommendoffer" gadget="" name="bes:ad-recommendoffernew"><!-- ueeScript: src=/oc/bes/ad/gadget/bes-ad-recommendoffer/bes-ad-recommendoffer.js-->
+	<link type="text/css" rel="stylesheet" ng-href="/oc/bes/ad/themes/default/resource/css/bes-ad-recommendoffer.css" class="ng-scope" href="/oc/bes/ad/themes/default/resource/css/bes-ad-recommendoffer.css">
+	<!-- 场景编码，使用不同的区分 -->
+	<!-- ueeGadgetAttr: name=scenetype-->
+	
+    <uee:include src="$Webapp+'/bes/ad/themes/default/template/bes-ad-recommendoffer/bes-ad-recommendoffer.html'" class="ng-scope"><uee:fire event="$bes.recommendoffer" script="$Controller.bes.ad.recommendoffer.init($Gadget,$Page)" class="ng-scope"></uee:fire>
+<div class="recommend ng-scope">
+<!-- modify by z00196689 for DTS2015112607857 2015-12-01
+	<div class="panel">
+		<div class="pl_title">本月用量</div>
+		<div class="pl_content margin_bottom_revise" ng-show="$Page.data.showMonthFlow">
+			<div ng-repeat="$Item in $Gadget.privilegeLeftInfo">
+			<div class="fr pl_num" ng-bind="$Item.usedInfo"></div>
+			<span ng-bind="$Item.prodName"></span>
+			<div class="process_bar" id="process_bar{{$index}}">
+				<uee:if test="$Item.colorInfo=='green'">
+					<div class="processBar" style="width: 212px;">
+						<div class="processBarOuter">
+							<div class="processBarOuterStart"></div>
+							<div class="processBarOuterMid" style="width: 192px;"></div>
+							<div class="processBarOuterEnd"></div>
+						</div>
+						<div class="processBarInnerWrap" ng-style="{{$Item.width}}">
+							<div class="processBarInner" style="width: 212px;">
+								<div class="processBarInnerStart"></div>
+								<div class="processBarInnerMid" style="width: 192px;"></div>
+								<div class="processBarInnerEnd"></div>
+							</div>
+						</div>
+						<div class="processBarText"></div>
+					</div>
+				</uee:if>	
+				<uee:if test="$Item.colorInfo=='red'">
+					<div class="processBar off" style="width: 212px;">
+						<div class="processBarOuter">
+							<div class="processBarOuterStart"></div>
+							<div class="processBarOuterMid" style="width: 192px;"></div>
+							<div class="processBarOuterEnd"></div>
+						</div>
+						<div class="processBarInnerWrap" ng-style="{{$Item.width}}">
+							<div class="processBarInner" style="width: 212px;">
+								<div class="processBarInnerStart"></div>
+								<div class="processBarInnerMid" style="width: 192px;"></div>
+								<div class="processBarInnerEnd"></div>
+							</div>
+						</div>
+						<div class="processBarText"></div>
+					</div>
+				</uee:if>	
+				
+			</div>
+		</div>
+		</div>
+	</div>
+ -->
+	<div class="panel offer">
+		<div class="pl_title ng-binding" ng-bind="'ad.person.title.Recommended' | i18n">Recomendación</div>
+		<div class="pl_content">
+			<!-- modify begin wwx230437 2015-09-17 V800R001C30TB100 DTS2015091402454 商品推荐页面不可用 -->
+			<div ng-show="$Page.data.showRecommend" class="">
+			<!-- modify end wwx230437 2015-09-17 V800R001C30TB100 DTS2015091402454 -->
+				<!-- ngRepeat: $Item in $Gadget.data.recommendlist.body.recommendOffers track by $Item.recommended -->
+			</div>
+		</div>
+	</div>
+</div>
+<div class="win_cover ng-scope" style="display: none;" id="recommendmsgbox">
+	<div style="position: absolute; left: 50%; top: 50%; z-index: 108;">
+		<div class="win_box operator_window_block">
+			<div class="close_box" id="recommend_close">
+				<uee:fire script="$Controller.bes.ad.recommendoffer.hideDialog($Gadget)" class="ng-scope"></uee:fire>
+			</div>
+			<div class="wb_title ng-binding" ng-bind="'ad.person.title.LeavingSMS' | i18n">Dejar SMS</div>
+
+			<div class="wb_content">
+				<div class="form_row form_con">
+					<div class="form_group">
+						<label class="form_label ng-binding" ng-bind="'ad.person.title.LeavingSMS' | i18n">Dejar SMS</label>
+						<div class="form_control">
+							<textarea id="msgcontent" class="form_textarea form_textarea ng-binding ng-pristine ng-valid" ng-model="$Gadget.msgcontents" ng-bind="'ad.person.title.cannotcharacters' | i18n">El contenido de entrada no puede exceder de 150 caracteres.</textarea>
+							<div class="leave_font ng-binding">/<!-- 150字 -->150 caracteres.</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="clearfix tree_btn">
+					<span class="btn_positive fr ng-binding" id="recommend_send" ng-bind="'ad.person.button.send' | i18n">enviar</span>
+					<span class="btn_negative fr ng-binding" id="recommend_cancel" ng-bind="'ad.person.button.cancel' | i18n">Cancelar</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</uee:include>
+
+</div>
+<!-- add end wwx230437 2015-09-17 V800R001C30TB100 DTS2015091402454 -->
+<div class="uee-gadget ng-scope bes-oc-productorder" gadget="" name="bes:oc-productorder"><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-oc-productorder/bes-oc-productValidate.js--><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-oc-productorder/bes-oc-proddispachurl.js--><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-oc-productorder/productorder.js--><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-oc-productorder/mainofferchange.js--><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-oc-productorder/bes-ad-productquickpick.js--><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-oc-productorder/bes-ad-shoppingcart.js-->
+	<link type="text/css" rel="stylesheet" ng-href="/oc/bes/ordercapture/themes/default/resource/css/productorder.css" class="ng-scope" href="/oc/bes/ordercapture/themes/default/resource/css/productorder.css">
+	<link type="text/css" rel="stylesheet" ng-href="resource.root/bes/ordercapture/themes/default/resource/css/ProductBooking_Popup.css" class="ng-scope" href="resource.root/bes/ordercapture/themes/default/resource/css/ProductBooking_Popup.css">	
+	<link type="text/css" rel="stylesheet" ng-href="resource.root/bes/ad/css/productorder-additional.css" class="ng-scope" href="resource.root/bes/ad/css/productorder-additional.css">	
+	
+	
+	
+	
+	
+	
+	<uee:include src="$Webapp+'/bes/ad/ctz/gadget/bes-oc-productorder/bes-oc-productorder.html'" class="ng-scope"><uee:fire init="" script="OC.Callchain.initQueryTraceFlag($Page, $Gadget, $Inject('$Fire'))" class="ng-scope"></uee:fire>
+<uee:fire init="$Page.queryTraceFlag" service="smservicetracebo/querytraceinfo" param-functype="$Page.functype" param-phonenum="$Page.phonenum" target="$Page.smTrace" onbefore="$Page.functype =$Page.menuId; $Page.phonenum = OC.Callchain.getServNum();$Page.pageId = 'PROORD';
+    OC.Callchain.setFireSearch('PROORD', 'init0000');" onerror="OC.Callchain.initError();" onafter="OC.Callchain.initFireSearch();" class="ng-scope"></uee:fire>
+<uee:fire init="$Page.contextInited &amp;&amp; $Page.callchainInit&amp;&amp; $Page.smTrace" onbefore="OC.Callchain.setFireSearch($Page.pageId, 'init0000')" script="$Controller.bes.oc.productorder.init($Gadget,$Get('$Fire'),$Page)" class="ng-scope"></uee:fire>
+<uee:fire event="$LoginSuccess" onbefore="OC.Callchain.setFireSearch($Page.pageId, 'poSubl02')" script="$Controller.bes.oc.productorder.subloginSuccess($Gadget,$Get('$Fire'),$Page,$UI)" class="ng-scope"></uee:fire>
+<uee:fire event="$bes.oc.shoppingcar.removeall" onbefore="OC.Callchain.setFireSearch($Page.pageId, 'porscAll')" script="$Controller.bes.oc.productorder.removeshoppingcatitem($Gadget,$Event)" class="ng-scope"></uee:fire>
+<uee:fire event="$bes.oc.shoppingcar.gotocheckoutfromcar" onbefore="OC.Callchain.setFireSearch($Page.pageId, 'pogtco02')" script="$Controller.bes.oc.productorder.gotocheckoutlist($Page,$Gadget,$Get('$Fire'),$UI)" class="ng-scope"></uee:fire>
+<uee:fire event="$bes.oc.selectCommodity" onbefore="OC.Callchain.setFireSearch($Page.pageId, 'poscDity')" script="$Controller.bes.oc.productorder.addMWToCar($Page,$Gadget,$Get('$Fire'),$Event.$Data, $UI)" class="ng-scope"></uee:fire>
+<uee:fire event="$bes.oc.productsearchoffering" onbefore="OC.Callchain.setFireSearch($Page.pageId, 'popsoffe')" script="$Controller.bes.oc.productorder.queryQRCode($Page,$Gadget,$Get('$Fire'),$Event.$Data, $UI)" class="ng-scope"></uee:fire>
+<uee:fire event="$bes.oc.modifyorder" onbefore="OC.Callchain.setFireSearch($Page.pageId, 'pomOrder')" script="$Controller.bes.oc.productorder.showPartShade()" class="ng-scope"></uee:fire>
+<uee:fire event="$bes.oc.promotionBundle" script="$Controller.bes.oc.productValidate.promotionBundle($Page,$Gadget,$Get('$Fire'),$Event.$Data, $UI)" class="ng-scope"></uee:fire>
+<uee:fire event="$bes.oc.checkout.back" script="$Controller.bes.oc.productorder.showStep1($Page,$Gadget)" class="ng-scope"></uee:fire>
+<uee:fire event="$bes.oc.packageSelected" script="$Controller.bes.oc.mainofferchange.offerChangeValidate($Page,$Gadget,$UI,$Event)" class="ng-scope"></uee:fire>
+<uee:fire event="$bes.ad.promofferevent" script="$Controller.bes.oc.productorder.promotionHandler($Page, $Gadget, $Fire, $UI)" class="ng-scope"></uee:fire>
+<uee:fire init="" script="$Controller.bes.oc.productorder.isBossIntfSolated($Page, $Gadget)" class="ng-scope"></uee:fire>
+<uee:fire event="$closeDeliverTab" popin="" class="ng-scope"></uee:fire>
+<link href="resource.root/bes/ad/ctz/themes/default/css/base.css" type="text/css" rel="stylesheet" class="ng-scope">
+<style class="ng-scope">
+.up_icon {
+    display: inline-block;
+    width: 8px;
+    height: 10px;
+    vertical-align: middle;
+    margin-left: 5px;
+    background: url('../images/arrowUp_03.png') no-repeat scroll center center transparent;
+    position: relative;
+    top: 5px;
+}
+
+.quantity_input {
+  width: 100%;
+  height: 5px;
+  line-height: 14px;
+  padding: 12px 0px;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #333333;
+  background: #ffffff;
+  position: relative;
+  text-align: center;
+}
+.per8
+{
+    width: 8%;
+}
+
+.per12
+{
+    width: 12%;
+}
+
+#recommendoffer{
+    display : none;
+}
+</style>
+<div ng-show="$Page.isAgentCreateSubs" class="ng-scope ng-hide">
+    <div class="uee-gadget ng-scope bes-ad-agentopenaccount" gadget="" name="bes:ad-agentopenaccount"><!-- ueeScript: src=/oc/bes/ad/gadget/person/install/bes-ad-agentopenaccount/bes-ad-agentopenaccount.js-->
+
+<!-- <link type="text/css" rel="stylesheet" ng-href="resource.root/bes/ad/themes/default/resource/css/queryOrderSearch.css"/> -->
+
+	
+	
+<!-- 	<script src="resource.root/bes/ad/ctz/gadget/bes-ad-agentopenaccount/bes-ad-agentopenaccount.js"></script>
+ -->	
+ 	
+ 	<uee:include src="$Webapp+'/bes/ad/themes/default/template/bes-ad-agentopenaccount/bes-ad-agentopenaccount.html'" class="ng-scope"><uee:fire init="" script="$Controller.bes.ad.agentopenaccount.init($UI, $Emit, $Gadget, $Page, $Fire,$Model)" class="ng-scope"></uee:fire>
+<div id="agentopenaccount" class="ng-scope">
+	 <div class="orderSearch">
+		<div class="panel">
+		    <!-- ngIf: $Page.custViewFlag -->
+			<div class="pl_content margin_bottom_revise">
+				<div class="form_con">
+					<div class="form_group per50">
+						<label class="form_label ng-binding"><span class="font_red">*</span>Servicio número:</label>
+						<div class="form_control">
+							<input type="text" class="form_input" id="serviceNumber" property="$Page.serviceNumber">
+							<uee:fire bind="#serviceNumber" event="change" script="$Controller.bes.ad.agentopenaccount.serviceNumberChange($Gadget,$Page)" class="ng-scope"></uee:fire>
+							<span class="btn_normal ng-binding" id="searchCardInfo"><!-- 查询 -->Buscar
+								<uee:fire bind="#searchCardInfo" onbefore="OC.Callchain.setFireSearch($Page.pageId, 'searchCardInfo');" script="$Controller.bes.ad.agentopenaccount.queryAgentCreateSubsDetail($UI,$Emit,$Gadget,$Page,$Get('$Fire'))" class="ng-scope"></uee:fire>
+							</span>
+							<span class="btn_normal ng-binding" id="queryServNumDetail">detalle del numero<!-- 号码详情  --><uee:fire event="click" script="$Controller.bes.ad.agentopenaccount.queryServNumDetail($Gadget,$Page,$Fire,$UI)" class="ng-scope">
+							</uee:fire>
+						</span>
+						</div>
+					</div>
+					<div class="form_group per50">
+						<label class="form_label ng-binding">Número de Tarjeta SIM<!-- <span class="font_red">*SIM卡号：</span> --></label>
+						<div class="form_control">
+							<input type="text" class="form_input" id="simCardNum" property="$Page.simCardNum">
+							<uee:fire bind="#simCardNum" event="change" script="$Controller.bes.ad.agentopenaccount.simCardInputChange($Gadget,$Page)" class="ng-scope"></uee:fire>
+							<span class="btn_normal ng-binding ng-hide" id="validSimCard" ng-show="$Gadget.showValidSimCard">Validar Tarjeta y número<!-- 号卡校验 -->
+								<uee:fire bind="#validSimCard" onbefore="OC.Callchain.setFireSearch($Page.pageId, 'qryorder');" script="$Controller.bes.ad.agentopenaccount.validSimCard($UI,$Emit,$Gadget,$Page,$Get('$Fire'))" class="ng-scope"></uee:fire>
+							</span>
+							<span class="btn_normal ng-binding" id="simCardDetail">Detalles de tarjeta<!-- SIM卡详情 --> <uee:fire event="click" script="$Controller.bes.ad.agentopenaccount.querySimCardDetail($Gadget,$Page,$Fire,$UI)" class="ng-scope">
+							</uee:fire>
+						</span>
+						</div>
+					</div>
+					<div class="form_group per100">
+						<label class="form_label ng-binding">Dealer<!-- 代理商： --></label>
+						<div class="form_control">
+							<span ng-bind="$Gadget.agentName" class="ng-binding"></span>
+						</div>
+					</div>
+					<!-- ngIf: $Gadget.offerInfo && $Page.projectVersion =='SHANDONG' -->
+					<div class="form_group per100">
+						<label class="form_label ng-binding">descripción:<!-- 说明： --></label>
+						<div class="form_control">
+							<span ng-bind="$Gadget.simCardExplain" title="" class="ng-binding"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+</div>
+<!-- <div ng-show="$Page.showOfferingOrder">
+		<uee:include
+			src="resource.root/bes/ordercapture/html/bes.oc.index.productorder.base.business.html"></uee:include>
+</div> -->
+
+<!-- 号码详情 -->
+<uee:fire event="$bes.ad.queryServNumDetail" onbefore="" popup="{'id':'queryServNumDetail','title' : $UEE.i18n('ad.person.label.serviceNumberDetail'),'width' : '760px','height' : '420px',
+		'src':'/oc'+'/bes/ad/themes/default/template/bes-ad-agentopenaccount/bes-oc-servernumdetail.html',resizable:false}" class="ng-scope">
+</uee:fire>
+
+<!-- SIM卡详情 -->
+<uee:fire event="$bes.ad.querySimCardDetail" onbefore="" popup="{'id':'querySimCardDetail','title' : $UEE.i18n('ad.person.title.CardDetails'),'width' : '760px','height' : '420px',
+		'src':'/oc'+'/bes/ad/themes/default/template/bes-ad-agentopenaccount/bes-oc-simdetail.html',resizable:false}" class="ng-scope">
+</uee:fire>
+</uee:include>
+ 	<!-- <uee:include src="$Webapp+'/bes/ad/ctz/themes/default/template/bes-ad-agentopenaccount/bes-ad-agentopenaccount.uslx'"></uee:include> -->
+ 	
+</div>
+</div>
+<div ng-show="!$Page.isAgentCreateSubs||$Page.showOfferingOrder" class="ng-scope">
+    <div id="productordermainImpl" class="mainImpl hasRecommend" ng-show="!$Page.promotionsettingpopshow" style="overflow: auto;margin-right: 0px;">
+        <!-- ngIf: $Gadget.isBatchSpBusiness -->
+        <!-- ngIf: $Page.batchAction != 3 --><div class="wrap ng-scope" ng-if="$Page.batchAction != 3" ng-style="$Page.isBatch? {'padding-bottom': 0} : {}">
+            <div class="column searchRule clearfix" style="  padding: 20px 20px 20px 0;">
+                <div class="title" style="display: inline-block;font-size: 16px;color: #333;font-weight: normal;padding-bottom: 0px;">
+                    <span ng-bind="$Gadget.title" style="margin-left: 20px;" class="ng-binding">Suscripción de la Oferta</span>
+                    <div x-autoid="radio_offering" ng-show="!$Page.isBatch" id="testRaio" style="display: inline-block; margin-left: 20px;" class="">
+                        <!-- ngRepeat: $Item in $Gadget.offeringListHash --><label class="radio ng-scope checked" ng-class="{checked: $Gadget.qryMode ? $Gadget.qryMode == $Item.key : $index == 0 }" id="radio_offering" ng-repeat="$Item in $Gadget.offeringListHash" ng-click="$Gadget.qryMode = $Item.key">
+                            <ins id="insOferta principal actual:<b style='padding-left: 10px;color: #333;  font-weight: normal;'>PREPAGO TODO EN UNO MES $36.000</b>" class="uIcon">
+                            </ins>
+                            <span id="spanOferta principal actual:<b style='padding-left: 10px;color: #333;  font-weight: normal;'>PREPAGO TODO EN UNO MES $36.000</b>" class="label ng-binding" style="font-size: 12px;color: #7f7f7f;" ng-bind-html="this.$Get('$sce').trustAsHtml($Item.value)">Oferta principal actual:<b style="padding-left: 10px;color: #333;  font-weight: normal;">PREPAGO TODO EN UNO MES $36.000</b></span>
+                            <uee:fire script="$Controller.bes.oc.productorder.checkRadio($Gadget,$index,$Item)" class="ng-scope"></uee:fire>
+                        </label><!-- end ngRepeat: $Item in $Gadget.offeringListHash -->
+                    </div>
+                    <!-- ngIf: $Page.isNewOpenFlag&&$Gadget.offeringListHash.length==1 && !$Page.isBatch -->
+                </div>
+                <!-- ueeIf: undefined -->
+                    <!-- ngIf: !$Page.isBatch --><div class="uee-gadget ng-scope bes-ad-qrcode" id="productOrderQRcodeGadget" model="{&quot;categoryId&quot;:1201013,&quot;categoryName&quot;:&quot;Equipos&quot;}" gadget="" ng-if="!$Page.isBatch" name="bes:ad-qrcode"><!-- ueeScript: src=/oc/bes/ad/ctz/gadget/bes-ad-qrcode/bes-ad-qrcode.js-->
+    <link type="text/css" rel="stylesheet" ng-href="/oc/bes/ad/themes/default/resource/css/bes-ad-qrcode.css" class="ng-scope" href="/oc/bes/ad/themes/default/resource/css/bes-ad-qrcode.css">
+	
+
+  <uee:include src="$Webapp+'/bes/ad/ctz/gadget/bes-ad-qrcode/bes-ad-qrcode.html'" class="ng-scope"><uee:fire init="" script="$Controller.besOcQRcode.init($Gadget,$Get('$Fire'),$Page)" class="ng-scope"></uee:fire>
+
+<uee:fire event="$bes.oc.qrCodePop" popup="{'id':'qrCodePage','title' : 'Escanear el código QR','width' : '416px','height' : '230px',
+		    'src':'/oc/bes/ad/ctz/gadget/bes-ad-qrcode/bes-ad-qrcodepop.html',resizable:false}" class="ng-scope">
+</uee:fire>
+
+<!--二维码按钮  -->
+<div id="qrcode_id" class="btn_normal fr ng-binding ng-scope">
+	<span class="scan_code mr_5"></span>
+	<!-- 扫描二维码 -->Código de Barras / Código QR
+	<uee:fire script="$Controller.besOcQRcode.qrCodeBtn($Gadget)" class="ng-scope"></uee:fire>
+</div></uee:include>
+  
+</div><!-- end ngIf: !$Page.isBatch -->
+                <!-- end ueeIf: $Page.isHideQrcode!='1' -->
+
+                <!--Offer Category-->
+                <div x-autoid="GoodsType" class="content" id="at__GoodsType">
+                    <div class="row relative">
+                        <!-- ngIf: $Gadget.promSearch -->
+                        <!-- ngIf: !$Page.isDigitalSubsRegist --><div class="input percent per90 ng-scope" ng-if="!$Page.isDigitalSubsRegist">
+                            <!--商品总类  -->
+                            <div class="label ng-binding">Categoría de la Oferta :</div>
+                            <div class="comboCategory">
+                                <!-- All -->
+                                <!-- ngIf: $Gadget.goodsParam !=='goods' && $index+1 != ($Gadget.data.rootcategories || []).length -->
+                                <!-- ngRepeat: $Item in  $Gadget.data.rootcategories || [] --><!-- ngIf: $Gadget.goodsParam !=='goods' --><!-- end ngRepeat: $Item in  $Gadget.data.rootcategories || [] --><!-- ngIf: $Gadget.goodsParam !=='goods' --><!-- end ngRepeat: $Item in  $Gadget.data.rootcategories || [] --><!-- ngIf: $Gadget.goodsParam !=='goods' --><!-- end ngRepeat: $Item in  $Gadget.data.rootcategories || [] -->
+                                <!-- Add device -->
+                                <!-- ngRepeat: $Item in  $Gadget.data.rootcategories || [] --><!-- ngIf: $Gadget.goodsParam =='goods' && $Gadget.isRequipmentReturn != true --><div ng-if="$Gadget.goodsParam =='goods' &amp;&amp; $Gadget.isRequipmentReturn != true" ng-repeat="$Item in  $Gadget.data.rootcategories || []" class="" id="productcatagory0">
+                                    <a ng-bind="$Item.categoryName" class="ng-binding">Accesorios</a>
+                                    <uee:fire script="$Controller.bes.oc.productorder.clickcatalog($Gadget, $Get('$Fire'), '', this, jEvent.$Target, $Item,0)" class="ng-scope"></uee:fire>
+                                </div><!-- end ngIf: $Gadget.goodsParam =='goods' && $Gadget.isRequipmentReturn != true --><!-- end ngRepeat: $Item in  $Gadget.data.rootcategories || [] --><!-- ngIf: $Gadget.goodsParam =='goods' && $Gadget.isRequipmentReturn != true --><div ng-if="$Gadget.goodsParam =='goods' &amp;&amp; $Gadget.isRequipmentReturn != true" ng-repeat="$Item in  $Gadget.data.rootcategories || []" class="selected" id="productcatagory1">
+                                    <a ng-bind="$Item.categoryName" class="ng-binding">Equipos</a>
+                                    <uee:fire script="$Controller.bes.oc.productorder.clickcatalog($Gadget, $Get('$Fire'), '', this, jEvent.$Target, $Item,0)" class="ng-scope"></uee:fire>
+                                </div><!-- end ngIf: $Gadget.goodsParam =='goods' && $Gadget.isRequipmentReturn != true --><!-- end ngRepeat: $Item in  $Gadget.data.rootcategories || [] --><!-- ngIf: $Gadget.goodsParam =='goods' && $Gadget.isRequipmentReturn != true --><div ng-if="$Gadget.goodsParam =='goods' &amp;&amp; $Gadget.isRequipmentReturn != true" ng-repeat="$Item in  $Gadget.data.rootcategories || []" class="" id="productcatagory2">
+                                    <a ng-bind="$Item.categoryName" class="ng-binding">Equipos Fijos</a>
+                                    <uee:fire script="$Controller.bes.oc.productorder.clickcatalog($Gadget, $Get('$Fire'), '', this, jEvent.$Target, $Item,0)" class="ng-scope"></uee:fire>
+                                </div><!-- end ngIf: $Gadget.goodsParam =='goods' && $Gadget.isRequipmentReturn != true --><!-- end ngRepeat: $Item in  $Gadget.data.rootcategories || [] -->
+                               	<!-- 有主换货 不可以使用name判断 -->
+                                <!-- ngRepeat: $Item in  $Gadget.data.rootcategories || [] --><!-- ngIf: $Gadget.goodsParam =='goods' && $Gadget.isRequipmentReturn == true --><!-- end ngRepeat: $Item in  $Gadget.data.rootcategories || [] --><!-- ngIf: $Gadget.goodsParam =='goods' && $Gadget.isRequipmentReturn == true --><!-- end ngRepeat: $Item in  $Gadget.data.rootcategories || [] --><!-- ngIf: $Gadget.goodsParam =='goods' && $Gadget.isRequipmentReturn == true --><!-- end ngRepeat: $Item in  $Gadget.data.rootcategories || [] -->
+                            </div>
+                        </div><!-- end ngIf: !$Page.isDigitalSubsRegist -->
+                        <!-- ngIf: $Page.isDigitalSubsRegist -->
+                    </div>
+                    <!-- ueeForeach: undefined --><div class="row relative">
+                            <div class="input percent per100">
+                                <div class="label ng-binding">Categoría Nivel 2:</div>
+                                <div class="comboCategory">
+                                    <!-- ueeForeach: undefined --><div id="productcatagorychildsCategoría Nivel 20">
+                                            <a ng-bind="$Attr.categoryName" class="ng-binding">Tablet</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickcatalog($Gadget, $Get('$Fire'), '', this, jEvent.$Target, $Attr,$Item.index+1)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item || [] --><div id="productcatagorychildsCategoría Nivel 21">
+                                            <a ng-bind="$Attr.categoryName" class="ng-binding">Celular</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickcatalog($Gadget, $Get('$Fire'), '', this, jEvent.$Target, $Attr,$Item.index+1)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item || [] --><div id="productcatagorychildsCategoría Nivel 22">
+                                            <a ng-bind="$Attr.categoryName" class="ng-binding">Accesorios</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickcatalog($Gadget, $Get('$Fire'), '', this, jEvent.$Target, $Attr,$Item.index+1)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item || [] --><div id="productcatagorychildsCategoría Nivel 23">
+                                            <a ng-bind="$Attr.categoryName" class="ng-binding">SIM Card Reno Repo</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickcatalog($Gadget, $Get('$Fire'), '', this, jEvent.$Target, $Attr,$Item.index+1)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item || [] -->
+                                </div>
+                            </div>
+                        </div><!-- end ueeforeach: $Item in $Gadget.data.childrenIDs || [] -->
+                    <!-- ueeForeach: undefined --><!-- ngIf: $Item.name --><div class="row relative ng-scope" ng-if="$Item.name">
+                            <div class="input percent per100">
+                                <div class="label" title="Marca">
+                                    <span class="ng-binding">Marca:</span>
+                                </div>
+                                <div class="comboCategory">
+                                    <!-- ngIf: ($Item.options || []).length > 1 && !$Page.isDigitalSubsRegist --><div id="productattrall601030002" class="selected ng-scope" ng-if="($Item.options || []).length > 1 &amp;&amp; !$Page.isDigitalSubsRegist">
+                                        <a class="ng-binding">Todas</a>
+                                        <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), '', this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                    </div><!-- end ngIf: ($Item.options || []).length > 1 && !$Page.isDigitalSubsRegist -->
+                                    <!-- ueeForeach: undefined --><div id="productattr6010300020" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">AL</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr6010300021" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">ALCATEL</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr6010300022" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">APPLE</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr6010300023" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">BISMARK</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr6010300024" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">BLACKBERRY</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr6010300025" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">BMOBILE</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr6010300026" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">BRIGSTAR</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr6010300027" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">COMPUTEL SYSTEM</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr6010300028" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">CYRUS</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr6010300029" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">EASY GATE</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000210" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">Ericsson</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000211" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">ERICTEL M2M</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000212" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">Geotab</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000213" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">HP</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000214" class="">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">HUAWEI</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000215" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">LENOVO</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000216" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">LENOVO ASIA PACIFIC</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000217" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">LG</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000218" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">MICROSOFT MOBILE</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000219" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">MONSENY</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000220" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">MOTO</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000221" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">MOTOROLA</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000222" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">NOKIA</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000223" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">OBSERVA</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000224" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">Pointer</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000225" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">Queclink</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000226" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">Queclink Wireless Solutions CO.，Ltd.</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000227" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">SAMSUNG</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000228" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">SIN INFORMACIÓN</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000229" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">SkyPatrol</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000230" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">SONY</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000231" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">SONY ERICSSON</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000232" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">Starcom Systems</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000233" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">Suntech</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000234" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">Telconsur</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000235" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">Telo</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000236" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">ULTRA</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000237" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">XIAOMI</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000238" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">YEZZ</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000239" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">ZTE</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000240" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding"></a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000241" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">Otros</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000242" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">REALME</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000243" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">REALME SKYWIRE COMMU</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000244" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">MICROSOFT</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000245" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding"></a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000246" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding"></a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000247" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">hewlett packard</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000248" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">ASKEI</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000249" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">MITRASTAR</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000250" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">ARRIS</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000251" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">PENDIENTE-DEFINIR</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000252" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">VIVO</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000253" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">TCL</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000254" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">EKS</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000255" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">ASKEY</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000256" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">GOOGLE</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000257" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">JBL</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000258" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding"></a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000259" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">JBL XCB DE COLOMBIA</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000260" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding"></a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000261" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">Roksolid - Quantum</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000262" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">ACER</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000263" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">AMAZFIT / REALME</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] --><div id="productattr60103000264" class="item_hide attr_item_gt_14">
+                                            <a ng-bind="$Attr.LABEL" class="ng-binding">KODAK</a>
+                                            <uee:fire script="$Controller.bes.oc.productorder.clickattr($Gadget, $Get('$Fire'), $Attr, this, jEvent.$Target, $Item)" class="ng-scope"></uee:fire>
+                                        </div><!-- end ueeforeach: $Attr in $Item.options || [] -->
+                                    <!--  -->
+                                    <span id="PM_BRANDmore" style="font-size: 12px; color: #2a8ee7; margin: 8px; cursor:pointer; vertical-align: middle;" ng-show="true" class="ng-binding">
+                                    Más&gt;&gt; <uee:fire script="$Controller.bes.oc.productorder.searchAttrMore(jEvent.$Target)" class="ng-scope"></uee:fire>
+                                    </span>
+                                    <!--收起  -->
+                                    <span id="PM_BRANDless" style="display: none; font-size: 12px; color: #2a8ee7; margin: 8px; cursor:pointer; vertical-align: middle;" class="ng-binding">
+                                    &lt;&lt;Contraer <uee:fire script="$Controller.bes.oc.productorder.searchAttrLess(jEvent.$Target)" class="ng-scope"></uee:fire>
+                                    </span>
+                                </div>
+                            </div>
+                        </div><!-- end ngIf: $Item.name --><!-- end ueeforeach: $Item in $Gadget.data.searchattribute || [] -->
+                    <!-- 星级过滤  这部分-->
+                    <!-- ngIf: !$Gadget.promSearch || $Gadget.promShow --><div class="row relative ng-scope" ng-if=" !$Gadget.promSearch || $Gadget.promShow">
+                        <div class="input percent per100 ng-hide" ng-show="$Gadget.promSearch &amp;&amp; $Gadget.data.starCategorys.length > 0 ">
+                            <!-- <div class="label" title="星级">-->
+                            <div class="label" title="Nivel de Estrella">
+                                <!-- 星级 -->
+                                <span class="ng-binding">Nivel (Escala)</span>
+                            </div>
+                            <div class="comboCategory">
+                                <div id="starTagAll" class="selected">
+                                    <!--全部  -->
+                                    <a class="ng-binding">Todas</a>
+                                    <uee:fire script="$Controller.bes.oc.productorder.clickstartag($Gadget,jEvent.$Target,null)" class="ng-scope"></uee:fire>
+                                </div>
+                                <!-- ngRepeat: $Item in $Gadget.data.starCategorys -->
+                            </div>
+                        </div>
+                    </div><!-- end ngIf: !$Gadget.promSearch || $Gadget.promShow -->
+                    <!-- 添加销售标签 --> 
+                    <!-- ngIf: !$Page.isDigitalSubsRegist --><div x-autoid="SalesLabel" class="row relative ng-scope" id="at__SalesLabel" ng-if="!$Page.isDigitalSubsRegist">
+                        <div class="input percent per100">
+                            <!--销售标签  -->
+                            <div class="label ng-binding">Etiqueta de venta :</div>
+                            <div x-autoid="SalesLabel" class="comboCategory" id="at__SalesLabel">
+                                <div id="saleTagAll" class="selected">
+                                    <!--全部  -->
+                                    <a class="ng-binding">Todas</a>
+                                    <uee:fire script="$Controller.bes.oc.productorder.clicksaletag($Gadget,jEvent.$Target,null)" class="ng-scope"></uee:fire>
+                                </div>  
+                                <!-- ngRepeat: $Item in  $Gadget.data.saleTagList.options || [] --><div ng-repeat="$Item in  $Gadget.data.saleTagList.options || []" id="saleTagSale0" class="ng-scope">
+                                    <a class="lastchildattr ng-binding" ng-bind="$Item.VALUE">Test</a>
+                                    <uee:fire script="$Controller.bes.oc.productorder.clicksaletag($Gadget,jEvent.$Target, $Item.LABEL)" class="ng-scope"></uee:fire>
+                                </div><!-- end ngRepeat: $Item in  $Gadget.data.saleTagList.options || [] --><div ng-repeat="$Item in  $Gadget.data.saleTagList.options || []" id="saleTagSale1" class="ng-scope">
+                                    <a class="lastchildattr ng-binding" ng-bind="$Item.VALUE">Hot</a>
+                                    <uee:fire script="$Controller.bes.oc.productorder.clicksaletag($Gadget,jEvent.$Target, $Item.LABEL)" class="ng-scope"></uee:fire>
+                                </div><!-- end ngRepeat: $Item in  $Gadget.data.saleTagList.options || [] --><div ng-repeat="$Item in  $Gadget.data.saleTagList.options || []" id="saleTagSale2" class="ng-scope">
+                                    <a class="lastchildattr ng-binding" ng-bind="$Item.VALUE">Recommended</a>
+                                    <uee:fire script="$Controller.bes.oc.productorder.clicksaletag($Gadget,jEvent.$Target, $Item.LABEL)" class="ng-scope"></uee:fire>
+                                </div><!-- end ngRepeat: $Item in  $Gadget.data.saleTagList.options || [] --><div ng-repeat="$Item in  $Gadget.data.saleTagList.options || []" id="saleTagSale3" class="ng-scope">
+                                    <a class="lastchildattr ng-binding" ng-bind="$Item.VALUE">Latest</a>
+                                    <uee:fire script="$Controller.bes.oc.productorder.clicksaletag($Gadget,jEvent.$Target, $Item.LABEL)" class="ng-scope"></uee:fire>
+                                </div><!-- end ngRepeat: $Item in  $Gadget.data.saleTagList.options || [] -->
+                            </div>
+                        </div>
+                    </div><!-- end ngIf: !$Page.isDigitalSubsRegist -->
+					<div class="row relative">
+					    <!--支持按价格区间搜索 positivenumber只能为正整数-->
+						<!-- ngIf: $Gadget.currMenuId == 'salegoods' --><div class="input percent per100 ng-scope" ng-if="$Gadget.currMenuId == 'salegoods'">
+							    <div class="label ng-binding" style="float:left">precio de búsqueda :</div>
+								<div class="form_group per9 ng-binding" style="float:left">Min:
+									<input type="text" class="form_input ng-pristine ng-valid uee-dirty-invalid" style="width:80px;height:25px" property="$Gadget.minprice" maxlength="20" u-validator="positivenumber" name="$Gadget_006.minprice" id="uee-001" ueevstatus="success" ueevmsg="">
+								</div>
+								<div class="form_group per9 ng-binding" style="float:left">Max:
+									<input type="text" class="form_input ng-pristine ng-valid uee-dirty-invalid" style="width:80px;height:25px" property="$Gadget.maxprice" maxlength="20" u-validator="positivenumber" name="$Gadget_006.maxprice" id="uee-002" ueevstatus="success" ueevmsg="">
+								</div>	
+						</div><!-- end ngIf: $Gadget.currMenuId == 'salegoods' -->
+					</div>
+                    <div class="row relative">
+                        <div class="input percent per100">
+                            <!--搜索条件  -->
+                            <div class="label ng-binding">Criterio de búsqueda :</div>
+                            <div class="searchBar combSearchBar">
+                                <input x-autoid="inputquerystring" id="inputquerystring" ng-model="$Gadget.keyWord" type="text" style="font-size: 12px; color: black;" onmousedown="if(this.value==$UEE.i18n('ad.unsubscribe.label.keyword')){this.value=''};this.style.color='black'" ng-attr-title="{{$Gadget.keyWord}}" class="ng-valid ng-dirty valid" title="MOTO G60">
+                                <uee:fire event="click" bind="#inputquerystring" script="$Controller.bes.oc.productorder.focusOnSearchInput($Page, $Gadget)" class="ng-scope"></uee:fire>
+                                <uee:fire event="keyup" bind="#inputquerystring" script="$Controller.bes.oc.productorder.getAssociatedWords($Page, $Gadget)" class="ng-scope"></uee:fire>
+                                <uee:fire event="blur" bind="#inputquerystring" script="$Controller.bes.oc.productorder.blurOnSearchInput($Page, $Gadget,jEvent)" class="ng-scope"></uee:fire>
+                                <div x-autoid="productquerybtn" id="productquerybtn" class="searchButton" ng-style="$Gadget.isBatchSpBusiness? {'margin-right': '8px'} : {}">
+                                    <uee:fire region="$Gadget.minprice,$Gadget.maxprice" script="$Controller.bes.oc.productorder.clickSearch($Gadget,$Get('$Fire'))" class="ng-scope"></uee:fire>
+                                </div>
+                            </div>
+                            <div ng-show="$Gadget.cardSearch" class="ng-hide">
+                                <!-- 序号 -->
+                                <div class="label ng-binding">SN</div>
+                                <div class="searchBar combSearchBar">
+                                    <input x-autoid="query_card" id="query_card" type="text" ng-model="$Gadget.offerCondition" class="ng-pristine ng-valid">
+                                    <uee:fire bind="#query_card" event="change" script="$Controller.bes.oc.productorder.scanCard($Gadget, $UI)" class="ng-scope"></uee:fire>
+                                    <div x-autoid="query_card_btn" id="query_card_btn" class="searchButton">
+                                        <uee:fire script="$Controller.bes.oc.productorder.queryCardByIMEI($Get('$Fire'), $Gadget, $UI)" class="ng-scope"></uee:fire>
+                                    </div>
+                                </div>
+                                <!-- 温馨提示：支持扫码 -->
+                                <span style="margin-left: 20px;"><font style="color: #7f7f7f;size: 12px;font-family: Microsoft Yahei" ng-bind="'ad.marketplan.label.scancoderemind'|i18n" class="ng-binding">Consejos: Código de exploración es compatible.</font></span>
+                            </div>
+                            <div ng-show="$Gadget.imeiSearch" class="ng-hide">
+                                <div class="label">IMEI：</div>
+                                <div class="searchBar combSearchBar">
+                                    <input x-autoid="query_offer" id="query_offer" type="text" ng-model="$Gadget.offerCondition" class="ng-pristine ng-valid">
+                                    <uee:fire bind="#query_offer" event="change" script="$Controller.bes.oc.productorder.scanCard($Gadget, $UI)" class="ng-scope"></uee:fire>
+                                    <div x-autoid="query_offer_btn" id="query_offer_btn" class="searchButton">
+                                        <uee:fire script="$Controller.bes.oc.productorder.queryOfferByIMEI($Get('$Fire'), $Gadget, $UI)" class="ng-scope"></uee:fire>
+                                    </div>
+                                </div>
+                                <!-- 温馨提示：支持扫码 -->
+                                <span style="margin-left: 20px;">
+                                    <font style=" color: #7f7f7f;size: 12px;font-family: Microsoft Yahei " ng-bind=" 'ad.marketplan.label.scancoderemind'|i18n " class="ng-binding">Consejos: Código de exploración es compatible.</font>
+                                </span>
+                            </div>
+
+                        <!-- 搜索历史  -->
+                        <div class="searchBuyPanel" ng-show="$Gadget.showWords " style="display: none;">
+                            <div class="tab ng-hide" ng-show="$Gadget.showHisSearchWords ">
+                                <!-- ngRepeat: $hisitem in $Page.hissearchwords --><div ng-repeat="$hisitem in $Page.hissearchwords " ng-class="{true: 'even'}[($index+1)%2==0] " style="overflow: hidden; " class="ng-scope">
+                                    <span id="searchhisword0" title="MOTO G60" class="ellipsis  ng-binding" style="width:150px;display:inline-block ">MOTO G60
+                                    </span>
+                                    <uee:fire script="$Controller.bes.oc.productorder.clickHisSearchWord($Page, $Gadget, $hisitem, $index) " class="ng-scope"></uee:fire>
+                                    <div class="icon ">
+                                    <!--<uee:fire script="$Page.hissearchwords.splice($hisindex, 1) "></uee:fire> -->
+                                        <uee:fire script="$Controller.bes.oc.productorder.deleteHisSearchWord($Page, $Gadget, $index) " class="ng-scope"></uee:fire>
+                                    </div>
+                                </div><!-- end ngRepeat: $hisitem in $Page.hissearchwords -->
+                                <div class="even " id="product_clear_opt ">
+                                <!--清空历史记录  -->
+                                    <span class="clear_color  ng-binding">Borrar registro histórico
+                                        <!-- <uee:fire script="$Page.hissearchwords=[] "></uee:fire> -->
+                                        <uee:fire script="$Controller.bes.oc.productorder.deleteHisSearchWord($Page, $Gadget, 'ALL') " class="ng-scope"></uee:fire>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="tab" ng-show="$Gadget.showAssociateWords ">
+                                <!-- ngRepeat: $item in $Gadget.associateWords -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 热门搜索 -->
+                <div class="row relative ">
+                    <div class="input percent per100 "></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column products clearfix ">
+
+        <div class="percent per100 " style="padding-top: 10px; ">
+
+        <div class="cl40 pl_last" ng-show="!$Page.isBatch ">
+            <div class="tab ">
+                <div x-autoid="offer_product " class="tab_nav fl " id="at__offer_product ">
+                    <ul>
+                        <li ng-class="{active: $Gadget.tabIndex == 0}" id="offer_product " style="font-weight: 400; " class="active">
+                        <!--全部  -->
+                            <span style="color:#333; " class="ng-binding">Todas
+                                <uee:fire script="$Controller.bes.oc.productorder.changeTab($Gadget,$Get( '$Fire'),0) " class="ng-scope"></uee:fire>
+                            </span>
+                        </li>
+                        <li class="last " ng-class="{active: $Gadget.tabIndex == 1}" id="product_product ">
+                        <!--收藏  -->
+                            <span style="color:#333; " class="ng-binding">lista de deseos
+                                <uee:fire script="$Controller.bes.oc.productorder.changeTab($Gadget,$Get( '$Fire'),1) " class="ng-scope"></uee:fire>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ngIf: $Gadget.isFilterStockDiv -->
+                 <div class="fr " style="display: inline-block; vertical-align: top; ">
+                    <div class="order fr display_opt ">
+                        <!-- ngIf: $Gadget.goodsParam !=='goods' -->
+                        <!-- ngIf: $Gadget.goodsParam=='goods' --><div ng-if="$Gadget.goodsParam=='goods' " class="ng-scope">
+                            <!-- 按价格降序排序 -->
+                            <span id="PricesSortDesc " ng-show="$Gadget.priceFlag=='1' " class="ng-binding" style="cursor: pointer; ">Clasificar los precios<span class="od_icon "></span>
+                                <uee:fire script="$Controller.bes.oc.productorder.pricesOrder($Gadget,$Get( '$Fire'),jEvent.$Target) " class="ng-scope"></uee:fire>
+                            </span>
+
+                            <!-- 按价格升序排序 -->
+                            <span ng-show="$Gadget.priceFlag !=='1' " id="PricesSortAsc " class="ng-binding ng-hide" style="cursor: pointer; ">Clasificar los precios<span class="up_icon " style="float:right "></span>
+                                <uee:fire script="$Controller.bes.oc.productorder.pricesOrder($Gadget,$Get( '$Fire'),jEvent.$Target) " class="ng-scope"></uee:fire>
+                            </span>
+                            <!-- 按名称降序排序 -->
+                            <span ng-show="$Gadget.nameFlag=='1' " id="OfferNameEscDesc " class="ng-binding" style="cursor: pointer; ">Nombre oferta<span class="od_icon "></span>
+                                <uee:fire script="$Controller.bes.oc.productorder.offerNameEsc($Gadget,$Get( '$Fire'),jEvent.$Target) " class="ng-scope"></uee:fire>
+                            </span>
+
+                            <!-- 按名称升序排序 -->
+                            <span ng-show="$Gadget.nameFlag !=='1' " id="OfferNameEscAsc " class="ng-binding ng-hide" style="cursor: pointer; ">Nombre oferta
+                                <span class="up_icon " style="float:right "></span>
+                                <uee:fire script="$Controller.bes.oc.productorder.offerNameEsc($Gadget,$Get( '$Fire'),jEvent.$Target) " class="ng-scope"></uee:fire>
+                            </span>
+                        </div><!-- end ngIf: $Gadget.goodsParam=='goods' -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!-- <div class="cl-title noBorder fl per50 " style="padding-left:10px; ">
+                    <span id="offer "
+                        class="tab-nav personal-section_title ib padding_right_15 margin_right_10 " style="padding-left: 11px; " ng-class="{border_right : !$Page.isBatch, batchspprod_border0 : $Page.isBatch} ">
+                        <li>全部</li>
+                        全部
+                        <uee:fire script="$Controller.bes.oc.productorder.changeTab($Gadget,$Get( '$Fire'),0) "></uee:fire>
+                    </span>
+                    <span id="product " class="tab-nav active personal-section_title ib padding_right_15 margin_right_10 " ng-show="!$Page.isBatch ">
+                        <li class="active ">收藏</li>
+                        收藏
+                        <uee:fire script="$Controller.bes.oc.productorder.changeTab($Gadget,$Get( '$Fire'),1) "></uee:fire>
+                    </span>
+
+                </div> -->
+
+                <div class="display-opt  ng-hide" ng-show="$Gadget.changeLayout &amp;&amp; $Gadget.tabIndex==0 &amp;&amp; !$Page.isBatch ">
+                      <span id="card_layout " class="display_style display_grid active ">
+                            <uee:fire event="click " script="$Controller.bes.oc.productorder.turnDisplayMode($Gadget, 'CARD') " class="ng-scope"></uee:fire>
+                      </span>
+                      <span id="list_layout " class="display_style display_list ">
+                            <uee:fire event="click " script="$Controller.bes.oc.productorder.turnDisplayMode($Gadget, 'LIST') " class="ng-scope"></uee:fire>
+                      </span>
+                </div>
+
+                <!-- <div class="fr clearfix per51 ">
+                    <div class="fr ">
+
+                        <div class="fl display_opt left_line ">
+                            <span class="display_style display_grid active "></span>
+                            <span class="display_style display_list "></span>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+        <!--   切换显示模式  2015-06-08 begin     -->
+         <!--   切换显示模式 2015-06-08 end     -->
+
+            <div class="percent per100 productsImpl" ng-show="$Gadget.tabIndex==0 || $Gadget.tabIndex==1">
+            <div class="pl_title ">
+                <span class="font_16 bold  ng-binding">Lista de ofertas<!--集团客户列表--></span>
+            </div>
+                <div ng-show="!$Gadget.layoutType || !$Gadget.changeLayout " class="">
+
+                    <div class="row " style="background: #8797AB;height: 32px;line-height: 32px; ">
+                        <!--商品名称  -->
+                        <div class="percent float-blue ellipsis cursor per12">                           
+                            <p class="paleft colorwhite  ng-binding" title="Nombres de la oferta">Nombres de la oferta</p>
+                        </div>
+
+                        <!-- 商品编号 -->
+                        <div class="percent float-blue ellipsis cursor per10">
+                            <p class="paleft colorwhite  ng-binding" title="Código de oferta">Código de oferta</p>
+                        </div>
+
+                        <!-- 商品描述 -->
+                        <div class="percent per20 ellipsis cursor" ng-show="!$Gadget.is_Sp_Search " title="Descripción">     
+                            <p class="paleft colorwhite  ng-binding">Descripción&nbsp;</p>
+                        </div>
+
+                        <!-- 月租费  -->
+                        <!-- ngIf: $Gadget.goodsParam!=='goods' -->
+                        
+                        <!-- 价格 -->
+                        <!-- ngIf: $Gadget.goodsParam=='goods' --><div ng-if="$Gadget.goodsParam=='goods' " class="ng-scope">
+                            <div class="percent float-blue ellipsis cursor per8">
+                                <p class="paleft colorwhite  ng-binding" title="Valor">Valor</p>
+                            </div>
+                        </div><!-- end ngIf: $Gadget.goodsParam=='goods' -->
+
+						<!-- 商品详细信息 -->
+                        <div class="percent float-blue ellipsis cursor per20">
+                            <p class="paleft colorwhite  ng-binding" title="Detalle">Detalle</p>
+                        </div>
+                        
+                        <!-- 数量 -->
+                        <div class="percent per5 float-blue ellipsis cursor ">
+                            <p class="paleft colorwhite  ng-binding">Cantidad</p>
+                        </div>
+                        
+                        <!--操作  -->
+                        <div class="percent ellipsis cursor per25" style="text-align:center;">
+                            <p class="paleft colorwhite  ng-binding">Operación</p>
+                        </div>
+                    </div>
+					
+                    <!-- ngIf: (!$Gadget.data.productsearchoffering.offeringList || $Gadget.data.productsearchoffering.offeringList.length==0 ) && $Gadget.data.clickSearchFlag -->
+                    <!-- ngIf: !$Gadget.data.clickSearchFlag -->
+                    <!-- ueeForeach: undefined --><div class="row ">
+                            <div class="percent float-blue  ellipsis cursor per12" id="<em>MOTO</em> <em>G60</em>" style="text-overflow: ellipsis">
+                                <p ng-bind-html="this.$Get( '$sce').trustAsHtml($Item.offeringName) " class="paleft ellipsis ng-binding" title="Código:7738 (Nombre de la OfertaMOTO G60)"><em>MOTO</em> <em>G60</em></p>
+                                <uee:fire script="$Controller.bes.oc.productorder.offeringNameClick($Page,$Gadget,$Get( '$Fire'),$Item,$UI,$index) " class="ng-scope"></uee:fire>
+                            </div>
+                            <div class="percent per10 ng-binding" title="7738o" style="text-align: left; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; ">
+                            7738o&nbsp;</div>
+                             <div class="percent per20 ellipsis cursor  ng-binding" ng-show="!$Gadget.is_Sp_Search " title="MOTO G60">
+                            MOTO G60&nbsp;</div>
+                            <div class="percent per20 ellipsis cursor  ng-binding ng-hide" ng-show="$Gadget.is_Sp_Search " title="">
+                            &nbsp;</div>
+                            <!-- ngIf: $Gadget.goodsParam!=='goods' -->
+
+                            <!-- 显示Price -->
+                            <!-- ngIf: $Gadget.goodsParam=='goods' --><div ng-if="$Gadget.goodsParam=='goods' " class="ng-scope">
+                                <div class="percent per8 ng-binding" title="$ 9.999.999" style="text-align: left; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; ">
+                                $ 9.999.999&nbsp;</div>
+                            </div><!-- end ngIf: $Gadget.goodsParam=='goods' -->
+                            <div class="percent ellipsis cursor per20 ng-binding" ng-show="!$Gadget.is_Sp_Search " title="MOTO G60">
+                            MOTO G60&nbsp;</div>
+                            
+                            <!-- Quantity -->
+                            <div class="percent per5">
+                            	<!-- ueeIf: undefined -->
+                            	<!-- ueeIf: undefined -->
+                            		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            	<!-- end ueeIf: ($Item.salesNum <= 1 && $Item.salesNum != -1) || 'Y' == $Item.isBundle -->
+                            </div>
+                            
+                            <!-- ngIf: $Gadget.isBatchSpBusiness -->
+                            <!-- ngIf: !$Gadget.isBatchSpBusiness --><div class="percent per25 ng-scope" style="text-align: center; text-overflow: ellipsis; white-space: nowrap; " ng-if="!$Gadget.isBatchSpBusiness">
+
+                                <!-- ngIf: $Gadget.isShowValidateButton==true && $Gadget.selectCategoryId !='6009' && !$Page.isBatch -->
+                                <!-- ueeIf: undefined -->
+                                <!-- ueeIf: undefined -->
+                                    <div x-autoid="productaddtocar " id="productaddtocar7738" class="btn_normal  ng-binding">
+                                    <!-- 订购 -->
+                                        Suscribir
+                                        <uee:fire validate=".quantity_input" script="$Controller.bes.oc.productorder.addtocar($Page,$Gadget,$Get( '$Fire'),$Item,$UI,$index) " class="ng-scope"></uee:fire>
+                                    </div>
+                                <!-- end ueeIf: $Item.addtocarBtn -->
+                                
+                                <!-- ueeIf: undefined -->
+                                <!-- ngIf: $Gadget.tabIndex==0 && !$Page.isBatch --><div x-autoid="addFavorite " id="addFavorite7738" ng-if="$Gadget.tabIndex==0 &amp;&amp; !$Page.isBatch " class="btn_normal  ng-binding ng-scope">
+                                    <!--收藏  -->
+                                    Añadir a la lista de deseos
+                                    <uee:fire script="$Controller.bes.oc.productorder.mainTainFavorite1($Gadget,$Item.offeringId,$Item.offeringId,$Get( '$Fire'), 'FAVORITE',$UI,$index) " class="ng-scope"></uee:fire>
+                                </div><!-- end ngIf: $Gadget.tabIndex==0 && !$Page.isBatch -->
+                                <!-- ngIf: $Gadget.tabIndex==1 -->
+                            </div><!-- end ngIf: !$Gadget.isBatchSpBusiness -->
+                        </div><!-- ngIf: $Item.noLevelInfo --><!-- ngIf: $Item.showLevel --><!-- ngIf: $Gadget.tabIndex !=1 && !$Gadget.isBatchSpBusiness --><div ng-if="$Gadget.tabIndex !=1 &amp;&amp; !$Gadget.isBatchSpBusiness " class="ng-scope">
+                    <!-- ueeForeach: undefined -->
+                </div><!-- end ngIf: $Gadget.tabIndex !=1 && !$Gadget.isBatchSpBusiness --><!-- end ueeforeach: $Item in $Gadget.data.productsearchoffering.offeringList || [] --><div class="row even">
+                            <div class="percent float-blue  ellipsis cursor per12" id="<em>MOTO</em> <em>G60</em>S" style="text-overflow: ellipsis">
+                                <p ng-bind-html="this.$Get( '$sce').trustAsHtml($Item.offeringName) " class="paleft ellipsis ng-binding" title="Código:7356 (Nombre de la OfertaMOTO G60S)"><em>MOTO</em> <em>G60</em>S</p>
+                                <uee:fire script="$Controller.bes.oc.productorder.offeringNameClick($Page,$Gadget,$Get( '$Fire'),$Item,$UI,$index) " class="ng-scope"></uee:fire>
+                            </div>
+                            <div class="percent per10 ng-binding" title="7356o" style="text-align: left; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; ">
+                            7356o&nbsp;</div>
+                             <div class="percent per20 ellipsis cursor  ng-binding" ng-show="!$Gadget.is_Sp_Search " title="MOTO G60S">
+                            MOTO G60S&nbsp;</div>
+                            <div class="percent per20 ellipsis cursor  ng-binding ng-hide" ng-show="$Gadget.is_Sp_Search " title="">
+                            &nbsp;</div>
+                            <!-- ngIf: $Gadget.goodsParam!=='goods' -->
+
+                            <!-- 显示Price -->
+                            <!-- ngIf: $Gadget.goodsParam=='goods' --><div ng-if="$Gadget.goodsParam=='goods' " class="ng-scope">
+                                <div class="percent per8 ng-binding" title="$ 9.999.999" style="text-align: left; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; ">
+                                $ 9.999.999&nbsp;</div>
+                            </div><!-- end ngIf: $Gadget.goodsParam=='goods' -->
+                            <div class="percent ellipsis cursor per20 ng-binding" ng-show="!$Gadget.is_Sp_Search " title="MOTO G60S">
+                            MOTO G60S&nbsp;</div>
+                            
+                            <!-- Quantity -->
+                            <div class="percent per5">
+                            	<!-- ueeIf: undefined -->
+                            	<!-- ueeIf: undefined -->
+                            		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            	<!-- end ueeIf: ($Item.salesNum <= 1 && $Item.salesNum != -1) || 'Y' == $Item.isBundle -->
+                            </div>
+                            
+                            <!-- ngIf: $Gadget.isBatchSpBusiness -->
+                            <!-- ngIf: !$Gadget.isBatchSpBusiness --><div class="percent per25 ng-scope" style="text-align: center; text-overflow: ellipsis; white-space: nowrap; " ng-if="!$Gadget.isBatchSpBusiness">
+
+                                <!-- ngIf: $Gadget.isShowValidateButton==true && $Gadget.selectCategoryId !='6009' && !$Page.isBatch -->
+                                <!-- ueeIf: undefined -->
+                                <!-- ueeIf: undefined -->
+                                    <div x-autoid="productaddtocar " id="productaddtocar7356" class="btn_normal  ng-binding">
+                                    <!-- 订购 -->
+                                        Suscribir
+                                        <uee:fire validate=".quantity_input" script="$Controller.bes.oc.productorder.addtocar($Page,$Gadget,$Get( '$Fire'),$Item,$UI,$index) " class="ng-scope"></uee:fire>
+                                    </div>
+                                <!-- end ueeIf: $Item.addtocarBtn -->
+                                
+                                <!-- ueeIf: undefined -->
+                                <!-- ngIf: $Gadget.tabIndex==0 && !$Page.isBatch --><div x-autoid="addFavorite " id="addFavorite7356" ng-if="$Gadget.tabIndex==0 &amp;&amp; !$Page.isBatch " class="btn_normal  ng-binding ng-scope">
+                                    <!--收藏  -->
+                                    Añadir a la lista de deseos
+                                    <uee:fire script="$Controller.bes.oc.productorder.mainTainFavorite1($Gadget,$Item.offeringId,$Item.offeringId,$Get( '$Fire'), 'FAVORITE',$UI,$index) " class="ng-scope"></uee:fire>
+                                </div><!-- end ngIf: $Gadget.tabIndex==0 && !$Page.isBatch -->
+                                <!-- ngIf: $Gadget.tabIndex==1 -->
+                            </div><!-- end ngIf: !$Gadget.isBatchSpBusiness -->
+                        </div><!-- ngIf: $Item.noLevelInfo --><!-- ngIf: $Item.showLevel --><!-- ngIf: $Gadget.tabIndex !=1 && !$Gadget.isBatchSpBusiness --><div ng-if="$Gadget.tabIndex !=1 &amp;&amp; !$Gadget.isBatchSpBusiness " class="ng-scope">
+                    <!-- ueeForeach: undefined -->
+                </div><!-- end ngIf: $Gadget.tabIndex !=1 && !$Gadget.isBatchSpBusiness --><!-- end ueeforeach: $Item in $Gadget.data.productsearchoffering.offeringList || [] --><div class="row ">
+                            <div class="percent float-blue  ellipsis cursor per12" id="<em>MOTO</em> <em>G60</em>S PX" style="text-overflow: ellipsis">
+                                <p ng-bind-html="this.$Get( '$sce').trustAsHtml($Item.offeringName) " class="paleft ellipsis ng-binding" title="Código:7357 (Nombre de la OfertaMOTO G60S PX)"><em>MOTO</em> <em>G60</em>S PX</p>
+                                <uee:fire script="$Controller.bes.oc.productorder.offeringNameClick($Page,$Gadget,$Get( '$Fire'),$Item,$UI,$index) " class="ng-scope"></uee:fire>
+                            </div>
+                            <div class="percent per10 ng-binding" title="7357o" style="text-align: left; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; ">
+                            7357o&nbsp;</div>
+                             <div class="percent per20 ellipsis cursor  ng-binding" ng-show="!$Gadget.is_Sp_Search " title="MOTO G60S PX">
+                            MOTO G60S PX&nbsp;</div>
+                            <div class="percent per20 ellipsis cursor  ng-binding ng-hide" ng-show="$Gadget.is_Sp_Search " title="">
+                            &nbsp;</div>
+                            <!-- ngIf: $Gadget.goodsParam!=='goods' -->
+
+                            <!-- 显示Price -->
+                            <!-- ngIf: $Gadget.goodsParam=='goods' --><div ng-if="$Gadget.goodsParam=='goods' " class="ng-scope">
+                                <div class="percent per8 ng-binding" title="$ 9.999.999" style="text-align: left; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; ">
+                                $ 9.999.999&nbsp;</div>
+                            </div><!-- end ngIf: $Gadget.goodsParam=='goods' -->
+                            <div class="percent ellipsis cursor per20 ng-binding" ng-show="!$Gadget.is_Sp_Search " title="MOTO G60S PX">
+                            MOTO G60S PX&nbsp;</div>
+                            
+                            <!-- Quantity -->
+                            <div class="percent per5">
+                            	<!-- ueeIf: undefined -->
+                            	<!-- ueeIf: undefined -->
+                            		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            	<!-- end ueeIf: ($Item.salesNum <= 1 && $Item.salesNum != -1) || 'Y' == $Item.isBundle -->
+                            </div>
+                            
+                            <!-- ngIf: $Gadget.isBatchSpBusiness -->
+                            <!-- ngIf: !$Gadget.isBatchSpBusiness --><div class="percent per25 ng-scope" style="text-align: center; text-overflow: ellipsis; white-space: nowrap; " ng-if="!$Gadget.isBatchSpBusiness">
+
+                                <!-- ngIf: $Gadget.isShowValidateButton==true && $Gadget.selectCategoryId !='6009' && !$Page.isBatch -->
+                                <!-- ueeIf: undefined -->
+                                <!-- ueeIf: undefined -->
+                                    <div x-autoid="productaddtocar " id="productaddtocar7357" class="btn_normal  ng-binding">
+                                    <!-- 订购 -->
+                                        Suscribir
+                                        <uee:fire validate=".quantity_input" script="$Controller.bes.oc.productorder.addtocar($Page,$Gadget,$Get( '$Fire'),$Item,$UI,$index) " class="ng-scope"></uee:fire>
+                                    </div>
+                                <!-- end ueeIf: $Item.addtocarBtn -->
+                                
+                                <!-- ueeIf: undefined -->
+                                <!-- ngIf: $Gadget.tabIndex==0 && !$Page.isBatch --><div x-autoid="addFavorite " id="addFavorite7357" ng-if="$Gadget.tabIndex==0 &amp;&amp; !$Page.isBatch " class="btn_normal  ng-binding ng-scope">
+                                    <!--收藏  -->
+                                    Añadir a la lista de deseos
+                                    <uee:fire script="$Controller.bes.oc.productorder.mainTainFavorite1($Gadget,$Item.offeringId,$Item.offeringId,$Get( '$Fire'), 'FAVORITE',$UI,$index) " class="ng-scope"></uee:fire>
+                                </div><!-- end ngIf: $Gadget.tabIndex==0 && !$Page.isBatch -->
+                                <!-- ngIf: $Gadget.tabIndex==1 -->
+                            </div><!-- end ngIf: !$Gadget.isBatchSpBusiness -->
+                        </div><!-- ngIf: $Item.noLevelInfo --><!-- ngIf: $Item.showLevel --><!-- ngIf: $Gadget.tabIndex !=1 && !$Gadget.isBatchSpBusiness --><div ng-if="$Gadget.tabIndex !=1 &amp;&amp; !$Gadget.isBatchSpBusiness " class="ng-scope">
+                    <!-- ueeForeach: undefined -->
+                </div><!-- end ngIf: $Gadget.tabIndex !=1 && !$Gadget.isBatchSpBusiness --><!-- end ueeforeach: $Item in $Gadget.data.productsearchoffering.offeringList || [] -->
+            </div>
+            <div class="paging" style="padding-top:11px;">
+                <div id="pages"><div class="uPages" data-uuid="upages00004"><div class="uShowlist"><span class="v">12条</span><span class="trigger"></span></div><div class="uTotal">共<span>3</span>条</div><div class="ctrls"><div class="prev disabled"></div><div class="ctrl"><span class="selected uPage">1</span></div><div class="next disabled"></div></div><div class="pgo"><span>跳转</span><input type="text" value="1"><span class="trigger"></span></div></div></div>
+                <uee:fire bind="#pages" script="$Controller.bes.oc.productorder.clickPageNum($Gadget, $Inject('$Fire'),jEvent);" class="ng-scope"></uee:fire>
+            </div>
+        </div>
+    </div>
+</div><!-- end ngIf: $Page.batchAction != 3 -->
+</div>
+</div>
+<div class="fullcover ng-scope" id="offeringNameDetailPop" style="display: none">
+    <div class="windowBoxwrap" id="offeringNameDetail" style="position: absolute; left: 50%; top: 65%; z-index: 103; margin-left: -428px; margin-top: -308px; display: none">
+        <div class="uee-gadget ng-scope bes-oc-spinfo" gadget="" name="bes:oc-spinfo"><!-- ueeScript: src=/oc/bes/ad/gadget/bes-oc-spinfo/spinfo.js-->
+	<!-- ueeGadgetAttr: name=busicodeflag-->
+	<link type="text/css" rel="stylesheet" ng-href="/oc/bes/ordercapture/themes/default/resource/css/spinfo.css" class="ng-scope" href="/oc/bes/ordercapture/themes/default/resource/css/spinfo.css">
+	
+	<uee:include src="$Webapp+'/bes/ordercapture/themes/default/template/bes-oc-spinfo/bes-oc-spinfo.html'" class="ng-scope"><uee:fire event="$Gadget.productdetailinit" script="$Controller.bes.oc.spinfo.init($Event,$Gadget,this,$Inject('$Fire'),$UI);" class="ng-scope"></uee:fire>
+<div class="windowBox spDreamBusinessDetail ng-scope">
+	    <div class="closeBox" id="closeBoxChooseBox"></div>
+		<div class="dreamBusinessDetailPop">
+			<!--基本信息-->
+			<h3 class="title" style="margin-top:-5px;">基本信息</h3>
+			<div class="rowLine clearfix">
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">业务名称：</span><span class="dVal ellipsis ng-binding" style="max-width:125px" title=""></span>
+				</div>
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">业务代码：</span><span class="dVal ellipsis ng-binding" style="max-width:125px"></span>
+				</div>
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">业务属性：</span><span class="dVal ellipsis ng-binding" style="max-width:125px"></span>
+				</div>
+			</div>
+			<div class="rowLine clearfix">
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">服务类型：</span><span class="dVal ellipsis ng-binding" style="max-width:125px"></span>
+				</div>
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">计费类型：</span><span class="dVal ellipsis ng-binding" style="max-width:125px"><!-- {{$Gadget.data.spproductdetail.billingType}} --></span>
+				</div>
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">价格（元）：</span><span class="dVal ellipsis ng-binding" style="max-width:125px"><!-- {{($Gadget.data.spproductdetail.highPrice/1000).toFixed(2)}} --></span>
+				</div>
+			</div>
+			<div class="rowLine clearfix">
+				<div class="detailItem">
+					<span class="dName ellipsis" style="width:85px;">业务描述：</span>
+					<span class="dVal ellipsis ng-binding" style="max-width:500px" title="">
+					</span>
+				</div>
+			</div>
+			<!--服务提供商信息-->
+			<h3 class="title">服务提供商信息</h3>
+			<div class="rowLine clearfix">
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">企业名称：</span>
+					<span class="dVal ellipsis ng-binding" style="max-width:125px" title="">
+					</span>
+				</div>
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">简称：</span>
+					<span class="dVal ellipsis ng-binding" style="max-width:125px" title="">
+					</span>
+				</div>
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">企业代码：</span><span class="dVal ellipsis ng-binding" style="max-width:125px">
+					</span>
+				</div>
+			</div>
+			<div class="rowLine clearfix">
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">服务代码：</span><span class="dVal ellipsis ng-binding" style="max-width:125px">
+					</span>
+				</div>
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">客服电话：</span><span class="dVal ellipsis ng-binding" style="max-width:125px">
+					</span>
+				</div>
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">客服网址：</span>
+					<span class="dVal ellipsis" style="max-width:125px" title="">
+					<!-- <a href="{{$Gadget.data.spproductdetail.pcSPInfoTSRVO.domainPlat}}" class="norLink">
+					{{$Gadget.data.spproductdetail.pcSPInfoTSRVO.domainPlat}}
+					</a> -->
+					</span>
+				</div>
+			</div>
+			<div class="rowLine clearfix">
+				<div class="detailItem">
+					<span class="dName ellipsis" style="width:85px;">客服联系人：</span><span class="dVal ellipsis">
+					</span>
+				</div>
+			</div>
+			<div class="rowLine clearfix">
+				<div class="detailItem">
+					<span class="dName ellipsis" style="width:85px;">描述：</span>
+					<span class="dVal ellipsis ng-binding" style="max-width:500px" title="">
+					</span>
+				</div>
+			</div>
+			<!--服务信息-->
+			<h3 class="title">服务信息</h3>
+			<div class="rowLine clearfix">
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">访问模式：</span><span class="dVal ellipsis">
+					</span>
+				</div>
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">IP地址：</span><span class="dVal ellipsis">
+					</span>
+				</div>
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">端口：</span><span class="dVal ellipsis">
+					</span>
+				</div>
+			</div>
+			<div class="rowLine clearfix">
+				<div class="detailItem" style="width:33.333%;">
+					<span class="dName ellipsis" style="width:85px;">使用方法：</span><span class="dVal ellipsis" style="max-width:125px">
+					</span>
+				</div>
+				<div class="detailItem" style="width:66.666%;">
+					<span class="dName ellipsis" style="width:85px;">业务介绍网址：</span><span class="dVal ellipsis">
+					<a href="" class="norLink">
+					</a></span>
+				</div>
+				
+			</div>
+			<div class="rowLine clearfix">
+				<div class="detailItem">
+					<span class="dName ellipsis" style="width:85px;">使用方法描述：</span>
+					<span class="dVal ellipsis" style="max-width:500px" title="">
+					</span>
+				</div>
+			</div>
+			<div class="btnCon" style="text-align:right;margin-top:20px;">
+				<!-- <uee:if test="$Gadget.isshowokbtn == 'Y'"> -->
+				<!-- ueeIf: undefined -->
+					<a href="javascript:void(0);" class="btn blueBtn radiusBtn" id="dreamBusinessDetailPopBtnOK" style="padding:0 25px;">订购
+						<uee:fire script="$Controller.bes.oc.spinfo.order($Gadget, this)" class="ng-scope"></uee:fire>
+					</a>
+				<!-- end ueeIf: $Gadget.$Attrs.busicodeflag!='subsRelationQry' -->
+				<!-- </uee:if> -->
+				<!-- <uee:if test="$Gadget.isshowokbtn == 'T'">
+					<a href="javascript:void(0);" class="btn blueBtn radiusBtn" id="dreamBusinessDetailPopBtnOK" style="padding:0 25px;">退订
+						<uee:fire script="$Controller.bes.oc.spinfo.cancelorder($Gadget, this)"></uee:fire>
+					</a>
+				</uee:if> -->
+				<a href="javascript:void(0);" class="btn blueBtn radiusBtn" id="dreamBusinessDetailPopBtnCancel" style="padding:0 25px;">关闭
+					<uee:fire script="$Controller.bes.oc.spinfo.cancelorder($Gadget, this)" class="ng-scope"></uee:fire>
+				</a>
+			</div>
+		</div>
+</div></uee:include>
+</div>
+    </div>
+</div>
+<div class="fullcover nodisplay ng-scope" id="doubleConfirm" style="display:none;z-index: 108;">
+    <div class="windowBox" style="position: absolute; left: 37%; top: 40%; z-index: 108; width: 500px;height:160px;">
+        <div class="closeBox" id="choosePackagesCloseBox"></div>
+        <!--  <div class="wb_title" style="margin-bottom: 30px;padding-top: 0px;">请选择生效方式方式</div> -->
+        <div class="wb_content">
+            <!--生效类型：  -->
+            <label class="control-label ng-binding">Tipo efectivo</label>
+            <div class="form-control">
+                <div class="form-droplist" id="productorder_effective" style="width: 123px; float: left;"></div>
+                <div x-autoid="productorder_datetime_c" id="productorder_datetime_c" style="display:none ; float: left; padding-left: 18px;" class="dateTime"></div>
+            </div>
+        </div>
+        <div class="wb_opt">
+            <!--订购  -->
+            <span id="productordersurebtn" class="button button_sure_green ng-binding">Suscribir <uee:fire script="$Controller.bes.oc.productorder.orderByCardOk($Page,$Gadget)" class="ng-scope"></uee:fire>
+                <!-- 取消 -->
+        </span> <span id="productordercancelbtn" class="button button_cacel_gray ng-binding">Cancelar <uee:fire script="$Controller.bes.oc.productorder.orderByCardCancel()" class="ng-scope"></uee:fire></span>
+        </div>
+    </div>
+</div>
+<!-- 结算页面 -->
+<!-- ueeIf: undefined -->
+<div class="partShade ng-scope">
+    <!-- ngIf: window.top.productPopupFlag=='1' -->
+    <!-- <div style="height:74px;background:#F0F3F7;"></div> -->
+</div>
+    <!-- ngIf: window.top.productPopupFlag=='2' -->
+<!-- 营销活动页面 -->
+<!-- ueeIf: undefined -->
+</uee:include>
+</div>
+
+<!-- 购物车-->
+<!-- ngIf: !window.top.shoppingcart.hasparentshoppingcar -->
+<!-- </div> -->
+
+</div>
+
+<script>
+$UEE.$Fire.onerrors[491]=function(data, fire, scope){
+	debugger;
+
+	adutil.openAuthTab(data);
+	 //"/bes/ordercapture/html/bes.agentdesktop.login.html"
+};
+</script>
+<div class="bf_tips"><div class="head left"></div><div class="head right"></div><div class="head middle"></div><div class="mid"><div class="bf_tips_container"><div class="bf_tips_content"></div></div></div><div class="foot left"></div><div class="foot right"></div><div class="foot middle"></div></div><div class="uslp" style="display: none;"><div data-showing="6">6条</div><div data-showing="12" class="selected">12条</div></div></body></html>

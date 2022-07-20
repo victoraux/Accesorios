@@ -23,13 +23,6 @@ public class LogueoPageObject extends PageObject {
     By btnBuscar = By.xpath("//*[@id='search_info_text']");
     By btnVista360 = By.name("Vista 360° Individual");
 
-   // By btnVista360 = By.name("Vista 360° Individual");
-
-   // By txtIdentificacion = By.id("idNumber");
-
-
-
-
 
 
     public By getTxtCuenta() {
